@@ -21,7 +21,7 @@ In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary
   
     $ sudo apt-get install build-essential
     
-.  Go to [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads) and download latest CUDA toolkit for Ubuntu 16.04 by selecting the following in the web-interface that is offered:    
+.  Go to https://developer.nvidia.com/cuda-downloads[https://developer.nvidia.com/cuda-downloads] and download latest CUDA toolkit for Ubuntu 16.04 by selecting the following in the web-interface that is offered:    
     - Operating system: Linux 
     - Architecture: x86_64
     - Distribution: Ubuntu
