@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://adler-j.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//adler-j.github.io/themes/casper/assets/css/screen.css?v=1500498757329" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://adler-j.github.io/2017/07/19/Dual-GPU-configuration-in-Ubuntu-1604-and-CUDA-80.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0" />
+    <meta property="og:description" content="Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs. The primary GPU will be used for computations and the secondary one will be used for displaying graphics. In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and" />
+    <meta property="og:url" content="https://adler-j.github.io/2017/07/19/Dual-GPU-configuration-in-Ubuntu-1604-and-CUDA-80.html" />
+    <meta property="article:published_time" content="2017-07-19T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0" />
+    <meta name="twitter:description" content="Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs. The primary GPU will be used for computations and the secondary one will be used for displaying graphics. In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and" />
+    <meta name="twitter:url" content="https://adler-j.github.io/2017/07/19/Dual-GPU-configuration-in-Ubuntu-1604-and-CUDA-80.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "author": {
+        "@type": "Person",
+        "name": "Jonas Adler",
+        "image": "https://avatars2.githubusercontent.com/u/2202312?v=4",
+        "url": "https://adler-j.github.io/author/adler-j/",
+        "sameAs": "https://adler-j.github.io/2_gpu_ubuntu",
+        "description": "Industrial PhD student in applied mathematics at KTH, working for Elekta."
+    },
+    "headline": "Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0",
+    "url": "https://adler-j.github.io/2017/07/19/Dual-GPU-configuration-in-Ubuntu-1604-and-CUDA-80.html",
+    "datePublished": "2017-07-19T00:00:00.000Z",
+    "description": "Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs. The primary GPU will be used for computations and the secondary one will be used for displaying graphics. In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://adler-j.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-07-19">19 July 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.
+The primary GPU will be used for computations and the secondary one will be used for displaying graphics.
+In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and a NVIDIA Quadro K620 as secondary GPU.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Turn off computer, ensure only the primary GPU is connected to the motherboard.
+Boot from USB with Ubuntu 16.04 LTS installation,
+install a fresh copy of Ubuntu 16.04 LTS but keep Windows partitions intact,
+e.g. by choosing "Erase Ubuntu xx.yy and reinstall"</p>
+</li>
+<li>
+<p>Install build essentials.</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo apt-get install build-essential
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Go to [<a href="https://developer.nvidia.com/cuda-downloads" class="bare">https://developer.nvidia.com/cuda-downloads</a>](<a href="https://developer.nvidia.com/cuda-downloads" class="bare">https://developer.nvidia.com/cuda-downloads</a>) and download latest CUDA toolkit for Ubuntu 16.04 by selecting the following in the web-interface that is offered:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Operating system: Linux</p>
+</li>
+<li>
+<p>Architecture: x86_64</p>
+</li>
+<li>
+<p>Distribution: Ubuntu</p>
+</li>
+<li>
+<p>Version: 16.04</p>
+</li>
+<li>
+<p>Installer Type: runfile (local)</p>
+<div class="literalblock">
+<div class="content">
+<pre>This will download the latest version,
+which in the instructions will be is version 8.0.44,
+so the file that will be downloaded is "cuda_8.0.44_linux.run"</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open up a terminal and extract the separate installers via:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ mkdir ~/Downloads/nvidia_installers
+$ cd ~/Downloads
+$ sudo chmod a+x ./cuda_8.0.44_linux.run
+$ ./cuda_8.0.44_linux.run -extract=~/Downloads/nvidia_installers
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Completely uninstall anything in the ubuntu repositories with nvidia-*. I used synaptic and did a purge, AKA completely uninstall programs and configuration.</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo apt-get --purge remove nvidia-*
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>No need to create an xorg.conf file. If you have one, remove it (assuming you have a fresh OS install).</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo rm /etc/X11/xorg.conf
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the /etc/modprobe.d/blacklist-nouveau.conf file with the 2 following lines:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+blacklist nouveau
+options nouveau modeset=0
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Then do a</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo update-initramfs -u
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reboot computer. Nothing should have changed in loading up menu.
+You should be taken to the login screen.
+Once there type: Ctrl + Alt + F1, and login to your user.
+Keep the next commands handy in another machine since now you are in tty.</p>
+</li>
+<li>
+<p>In tty:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+cd ~/Downloads/nvidia_installers
+sudo service lightdm stop
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The top line is a necessary step for installing the driver.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now type</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+sudo ./NVIDIA-Linux-x86_64-367.48.run --no-opengl-files
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The file "NVIDIA-Linux-x86_64-367.48.run" should have been created by the extract command at step (4.) above. It is important to include the opengl flag in the above command. If you miss that, either you will get stuck in ?login loop? or your computer would boot with a black screen at all times.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>At some point you will get a warning message about 32-bit support, answer ok.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>When prompted "The distribution-provided pre-installed script failed are you sure you want to continue". Answer continue.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>If prompted to over-write xorg.conf, answer yes.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Pick defaults for all other options.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now install the toolkit also</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+sudo ./cuda-linux64-rel-8.0.44-21122537.run
+sudo ./cuda-samples-linux-8.0.44-21122537.run
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Both the run-files above are suppose to have been created by the extract command at step (4.) above.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Pick defaults to all questions.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Pick yes for symbolic links.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set Environment path variables in .bashrc:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reload bash in order to apply these settings</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ exec bash
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the driver version:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ cat /proc/driver/nvidia/version
+NVRM version: NVIDIA UNIX x86_64 Kernel Module    367.48    Sat Sep    3 18:21:08 PDT 2016
+GCC version:    gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.1)
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check CUDA driver version:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Sun_Sep__4_22:14:01_CDT_2016
+Cuda compilation tools, release 8.0, V8.0.44
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>At this point you can switch the lightdm back on again by doing:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo service lightdm start
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Shut down computer, insert secondary GPU which in this example is a Quadro K620 card.</p>
+</li>
+<li>
+<p>Boot computer, log in.</p>
+</li>
+<li>
+<p>Check that both GPU cards are recognized by the system, by typing</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ nvidia-smi
+Mon Jan    9 14:47:10 2017
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 367.48                 Driver Version: 367.48                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN X (Pascal)    Off  | 0000:02:00.0     Off |                  N/A |
+| 34%   44C    P8    17W / 250W |    129MiB / 12187MiB |      4%      Default |
+|-------------------------------+----------------------+----------------------+
+|   1  Quadro K620         Off  | 0000:03:00.0      On |                  N/A |
+| 24%   41C    P0     3W /  30W |      1MiB /  2000MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0      3954    G   /usr/lib/xorg/Xorg                             128MiB |
++-----------------------------------------------------------------------------+
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate Nvidia X11 configuration file and activate multiple GPU option:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo nvidia-xconfig -multigpu=on
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the secondary GPU as the default GPU device for displaying graphics.</p>
+</li>
+<li>
+<p>Find the PCI port of the secondary GPU by typing</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ nvidia-smi -a
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>In the output that follow, find the PCI bus related to the secondary GPU. Simply look for text in output where the "Product Name" matches the secondary GPU and read the PCI bus number.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>In my current output is given below, the PCI bus is "3":</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+[...]
+GPU 0000:03:00.0
+    Product Name                    : Quadro K620
+    Product Brand                   : Quadro
+    Display Mode                    : Enabled
+    Display Active                  : Enabled
+    Persistence Mode                : Disabled
+    Accounting Mode                 : Disabled
+    Accounting Mode Buffer Size     : 1920
+    Driver Model
+        Current                     : N/A
+        Pending                     : N/A
+    Serial Number                   : 0324114080422
+    GPU UUID                        : GPU-4c631408-4129-9d5d-fbf3-0588bc1ab5cf
+    Minor Number                    : 1
+    VBIOS Version                   : 82.07.4E.00.0E
+    MultiGPU Board                  : No
+    Board ID                        : 0x300
+    GPU Part Number                 : N/A
+    Inforom Version
+        Image Version               : 2012.0504.00.03
+        OEM Object                  : 1.1
+        ECC Object                  : N/A
+        Power Management Object     : N/A
+    GPU Operation Mode
+        Current                     : N/A
+        Pending                     : N/A
+    GPU Virtualization Mode
+        Virtualization mode         : None
+    PCI
+        Bus                         : 0x03
+        Device                      : 0x00
+        Domain                      : 0x0000
+        Device Id                   : 0x13BB10DE
+        Bus Id                      : 0000:03:00.0
+[...]
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update X11 configuration file.</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ sudo pico /etc/X11/xorg.conf
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Find the section</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+EndSection
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>and replace with</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BusID          "PCI:3:0:0"
+EndSection
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Here, "3" should match the PCI bus as determined above.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Shutdown computer. Switch display cable so that it is connected to the secondary GPU. Start computer.</p>
+</li>
+<li>
+<p>Validate that both GPUs are active and that the secondary GPU is used</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ nvidia-smi
+Mon Jan  9 14:56:11 2017
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 367.48                 Driver Version: 367.48                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN X (Pascal)    Off  | 0000:02:00.0     Off |                  N/A |
+| 24%   41C    P0    17W / 250W |      1MiB / 12187MiB |      0%      Default |
+|-------------------------------+----------------------+----------------------+
+|   1  Quadro K620         Off  | 0000:03:00.0      On |                  N/A |
+| 34%   44C    P8     3W /  30W |    129MiB /  2000MiB |      4%      Default |
++-------------------------------+----------------------+----------------------+</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    1      3954    G   /usr/lib/xorg/Xorg                             128MiB |
++-----------------------------------------------------------------------------+
+```</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h1 id="_acknowledgement" class="sect0">Acknowledgement</h1>
+<div class="paragraph">
+<p>This guide largely follows [Installing CUDA with Ubuntu](<a href="http://kislayabhi.github.io/Installing_CUDA_with_Ubuntu/" class="bare">http://kislayabhi.github.io/Installing_CUDA_with_Ubuntu/</a>), but has been updated for Ubuntu 16.04 and two GPUs.
+[Ozan Öktem](<a href="https://github.com/ozanoktem" class="bare">https://github.com/ozanoktem</a>) helped compile the notes.</p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://adler-j.github.io/author/adler-j/" style="background-image: url(https://avatars2.githubusercontent.com/u/2202312?v&#x3D;4)"><span class="hidden">Jonas Adler's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://adler-j.github.io/author/adler-j/">Jonas Adler</a></h4>
+
+                    <p>Industrial PhD student in applied mathematics at KTH, working for Elekta.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Stockholm, Sweden</span>
+                    <span class="author-link icon-link"><a href="https://adler-j.github.io/2_gpu_ubuntu">https://adler-j.github.io/2_gpu_ubuntu</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Dual%20GPU%20configuration%20in%20Ubuntu%2016.04%20and%20CUDA%208.0&amp;url=https://adler-j.github.io/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://adler-j.github.io/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://adler-j.github.io/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://adler-j.github.io"></a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1500498757329"></script>
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/index.js?v=1500498757329"></script>
+
+</body>
+</html>
