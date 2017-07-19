@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 19 Jul 2017 21:31:38 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 19 Jul 2017 21:39:41 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.
@@ -39,12 +39,10 @@ e.g. by choosing "Erase Ubuntu xx.yy and reinstall"</p>
 </li>
 <li>
 <p>Installer Type: runfile (local)</p>
-<div class="literalblock">
-<div class="content">
-<pre>This will download the latest version,
+<div class="paragraph">
+<p>This will download the latest version,
 which in the instructions will be is version 8.0.44,
-so the file that will be downloaded is "cuda_8.0.44_linux.run"</pre>
-</div>
+so the file that will be downloaded is "cuda_8.0.44_linux.run"</p>
 </div>
 </li>
 </ul>
@@ -85,10 +83,8 @@ $ ./cuda_8.0.44_linux.run -extract=~/Downloads/nvidia_installers</pre>
 options nouveau modeset=0</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Then do a</pre>
-</div>
+<div class="paragraph">
+<p>Then do a</p>
 </div>
 <div class="literalblock">
 <div class="content">
