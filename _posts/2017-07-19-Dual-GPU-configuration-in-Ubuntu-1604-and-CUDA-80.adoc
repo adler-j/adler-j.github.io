@@ -27,10 +27,10 @@ In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary
     - Distribution: Ubuntu
     - Version: 16.04
     - Installer Type: runfile (local)
-    
-    This will download the latest version, 
-    which in the instructions will be is version 8.0.44, 
-    so the file that will be downloaded is "cuda_8.0.44_linux.run"
++
+This will download the latest version, 
+which in the instructions will be is version 8.0.44, 
+so the file that will be downloaded is "cuda_8.0.44_linux.run"
     
 .  Open up a terminal and extract the separate installers via:
     
@@ -51,8 +51,8 @@ In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary
     
     blacklist nouveau
     options nouveau modeset=0
-    
-    Then do a
++  
+Then do a
     
     $ sudo update-initramfs -u
     
