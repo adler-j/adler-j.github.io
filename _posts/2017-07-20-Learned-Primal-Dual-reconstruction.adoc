@@ -5,8 +5,10 @@
 // :hp-tags: HubPress, Blog, Open_Source,
 // :hp-alt-title: My English Title
 
+:stem: latexmath
+
 = Learned Primal-Dual reconstruction
 
-$\alpha \beta \gamma$
+stem:[\circ, \ast]
 
 image::shepp_logan_data.png[shepp_logan]
