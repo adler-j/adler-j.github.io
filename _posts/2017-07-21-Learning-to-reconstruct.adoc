@@ -58,6 +58,6 @@ video::mayo_fbp_animation.mp4[]
 
 Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. Several people have done this and the results are in fact quite remarkable:
 
-image:learned_denoiser.png[mayo_data, height=400, width=600]
+image:learned_denoiser.png[mayo_data, height=309, width=800]
 
 
