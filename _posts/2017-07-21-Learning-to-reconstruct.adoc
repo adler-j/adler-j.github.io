@@ -11,15 +11,15 @@
 
 If I gave you a smoothed image:
 
-image::mayo_convolved.png[mayo_convolved]
+image::mayo_convolved.png[mayo_convolved, height=200, width=200]
 
 you could probably tell that it was generated from this image
 
-image:mayo_phantom.png[mayo_phantom]
+image:mayo_phantom.png[mayo_phantom, height=200, width=200]
 
 But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?
 
-image:mayo_data.png[mayo_data]
+image:mayo_data.png[mayo_data, height=200, width=200]
 
 Probably not. But we will demonstrate how we can teach a computer to do it.
 
@@ -34,13 +34,12 @@ g = \mathcal{T}(f) + noise
 
 Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
-video::mayo_fbp_animation.mp4[]
-
 == Machine learning for inverse problems
 
 If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding stem:[f] from stem:[g] using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
 
-But what happens when stem:[\mathcal{T}] is more complicated? We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]
+But what happens when stem:[\mathcal{T}] is more complicated? 
+We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]
 
 [stem]
 +++++++++++++++++
@@ -51,7 +50,11 @@ The main complication here is that we have a global relationship between signal 
 
 One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has stem:[1000 \cdot 1000 = 10^6] points, and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^11] weights. Storing these in single precision would require one terrabyte of data. For a single layer. Obviously this is not a workable solution.
 
-### Learned Primal-Dual
+== Learned denoisers
 
-From the above it is obvious that fully learning the inversion is not a workable solution, and we somehow need to 
+One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first apply some initial reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
+
+video::mayo_fbp_animation.mp4[]
+
+Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. 
 
