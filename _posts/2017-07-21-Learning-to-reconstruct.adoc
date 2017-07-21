@@ -15,11 +15,11 @@ image::mayo_convolved.png[mayo_convolved, height=400, width=400]
 
 you could probably tell that it was generated from this image
 
-// image:mayo_phantom.png[mayo_phantom, height=400, width=400]
+image:mayo_phantom.png[mayo_phantom, height=400, width=400]
 
 But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?
 
-// image:mayo_data.png[mayo_data, height=400, width=400]
+image:mayo_data.png[mayo_data, height=400, width=400]
 
 Probably not. But we will demonstrate how we can teach a computer to do it.
 
