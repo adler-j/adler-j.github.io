@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 15:57:07 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 16:06:33 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>If I gave you a smoothed image:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved">
+<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved" width="200" height="200">
 </div>
 </div>
 <div class="paragraph">
 <p>you could probably tell that it was generated from this image</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom" width="200" height="200"></span></p>
 </div>
 <div class="paragraph">
 <p>But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data" width="200" height="200"></span></p>
 </div>
 <div class="paragraph">
 <p>Probably not. But we will demonstrate how we can teach a computer to do it.</p>
@@ -39,13 +39,6 @@
 <div class="paragraph">
 <p>Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.</p>
 </div>
-<div class="videoblock">
-<div class="content">
-<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -55,7 +48,8 @@ Your browser does not support the video tag.
 <p>If \(\mathcal{T}\) maps images to images, such as the convolution above, finding \(f\) from \(g\) using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from \(g\) to \(f\).</p>
 </div>
 <div class="paragraph">
-<p>But what happens when \(\mathcal{T}\) is more complicated? We&#8217;ll focus on CT, where the forward model is given by the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a></p>
+<p>But what happens when \(\mathcal{T}\) is more complicated?
+We&#8217;ll focus on CT, where the forward model is given by the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a></p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -68,11 +62,23 @@ Your browser does not support the video tag.
 <div class="paragraph">
 <p>One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has \(1000 \cdot 1000 = 10^6\) points, and the signal \(512 \times 512 = 2.6 \cdot 10^5\). A single fully connected layer between these would require a staggering \(10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^11\) weights. Storing these in single precision would require one terrabyte of data. For a single layer. Obviously this is not a workable solution.</p>
 </div>
-<div class="sect2">
-<h3 id="_learned_primal_dual">Learned Primal-Dual</h3>
-<div class="paragraph">
-<p>From the above it is obvious that fully learning the inversion is not a workable solution, and we somehow need to</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_learned_denoisers">Learned denoisers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first apply some initial reconstruction, e.g. <a href="https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula">Filtered Back-Projection</a> (FBP):</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Once this has been applied, we can use any standard machine-learning approach to "denoise" the result.</p>
 </div>
 </div>
 </div>]]></description><link>https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</link><guid isPermaLink="true">https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</guid><dc:creator><![CDATA[Jonas Adler]]></dc:creator><pubDate>Fri, 21 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
