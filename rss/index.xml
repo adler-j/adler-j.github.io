@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 19:52:37 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 19:46:49 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Suppose that you were given a smoothed image:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved" width="300" height="300">
+<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved" width="400" height="400">
 </div>
 </div>
 <div class="paragraph">
 <p>Then you could probably tell that it was generated from this image:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom" width="300" height="300"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom" width="400" height="400"></span></p>
 </div>
 <div class="paragraph">
 <p>But what about if I instead gave you the line integrals of the image:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data" width="300" height="300"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data" width="400" height="400"></span></p>
 </div>
 <div class="paragraph">
 <p>Would you still tell it came from the image above? Probably not. But we will demonstrate how we can teach a computer to do it.</p>
@@ -75,7 +75,7 @@ We&#8217;ll focus on CT, where the forward model is given by the <a href="https:
 </div>
 <div class="videoblock">
 <div class="content">
-<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" width="600" height="309" poster="https://adler-j.github.io/images/mayo_fbp_animation" autoplay controls loop>
+<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" controls>
 Your browser does not support the video tag.
 </video>
 </div>
