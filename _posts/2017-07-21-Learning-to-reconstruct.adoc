@@ -11,15 +11,15 @@
 
 If I gave you a smoothed image:
 
-// image::mayo_convolved.png[mayo_convolved, height=400, width=400]
+image::mayo_convolved.png[mayo_convolved, height=400, width=400]
 
 you could probably tell that it was generated from this image
 
-// image:mayo_phantom.png[mayo_phantom, height=400, width=400]
+image:mayo_phantom.png[mayo_phantom, height=400, width=400]
 
 But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?
 
-// image:mayo_data.png[mayo_data, height=400, width=400]
+image:mayo_data.png[mayo_data, height=400, width=400]
 
 Probably not. But we will demonstrate how we can teach a computer to do it.
 
@@ -56,5 +56,8 @@ One of the most obvious solutions to this problem is to somehow re-cast the prob
 
 video::mayo_fbp_animation.mp4[]
 
-Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. 
+Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. Several people have done this and the results are in fact quite remarkable:
+
+image:learned_denoiser.png[mayo_data, height=400, width=600]
+
 
