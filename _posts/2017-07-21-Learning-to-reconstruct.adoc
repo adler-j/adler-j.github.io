@@ -56,7 +56,7 @@ This is obviously not a workable solution.
 
 One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first apply some initial reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
 
-video::mayo_fbp_animation.mp4[]
+video::mayo_fbp_animation.mp4[mayo_fbp_animation, height=309, width=800]
 
 Once this has been applied, we can use any standard machine-learning approach to "denoise" the result by training a neural network to take low quality images as input and return high quality images.
 
