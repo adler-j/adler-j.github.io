@@ -72,4 +72,16 @@ This observation leads us to a painful conclusion: in order to get a reconstruct
 
 The solution is to take a middle way, to incorporate sufficiently much information known a-priori to make the problem tractible and then learn the rest. 
 
-The most powerfull prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}].
+The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
+
+The idea of our proposed model is to use these operators alternatingly, first use a neural network to update the data (a so called *dual* step), then apply the adjoint operator to this and use it as input to a neural network and udate the reconstruction (the *primal* step). This is iteratively performed 10 times, at which point we have a final reconstruction.
+
+The method can be written:
+
+[stem]
++++++++++++++++++
+\begin{align*}
+	h_{i + 1} =&\ \Gamma_{\theta_i^d} \bigl(h_{i}, \mathcal{T}(f_i), g\bigr) \\
+	f_{i + 1} =&\ \Lambda_{\theta_i^p} \bigl(f_{i}, \mathcal{T}^*(h_{i + 1}) \bigr)
+\end{align*}
++++++++++++++++++
