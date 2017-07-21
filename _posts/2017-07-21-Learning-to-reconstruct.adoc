@@ -13,11 +13,9 @@ If I gave you a smoothed image:
 
 image::mayo_convolved.png[mayo_convolved]
 
-would you be able to tell that it was generated from this image?
+you could probably tell that it was generated from this image
 
 image:mayo_phantom.png[mayo_phantom]
-
-You probably could, and you might even think that it should be possible to teach a computer how to do it.
 
 But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?
 
@@ -27,16 +25,16 @@ Probably not. But we will demonstrate how we can teach a computer to do it.
 
 == An introduction to inverse problems
 
-Inverse problems refer to problems where one seeks to reconstruct some parameters  from indirect observations. Mathematically we have
+In inverse problems we seeks to reconstruct some parameters from indirect observations. Mathematically this can be written as finding some parameters stem:[f] that is connected to our measured data stem:[g] through the _forward model_ stem:[\mathcal{T}]:
 
 [stem]
 +++++++++++++++++
 g = \mathcal{T}(f) + noise
 +++++++++++++++++
 
-where stem:[g] is our measured data and stem:[f] is the parameters (signal) we want to reconstruct. These are connected through the _forward model_ stem:[\mathcal{T}], which describes how some set of parameters gives rise to an observation.
-
 Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
+
+video::animation.mp4[]
 
 == Machine learning for inverse problems
 
