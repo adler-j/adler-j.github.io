@@ -53,5 +53,7 @@ The main complication here is that we have a global relationship between signal 
 
 One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has stem:[1000 \cdot 1000 = 10^6] points, and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^11] weights. Storing these in single precision would require one terrabyte of data. For a single layer. Obviously this is not a workable solution.
 
+### Learned Primal-Dual
 
+From the above it is obvious that fully learning the inversion is not a workable solution, and we somehow need to 
 
