@@ -40,7 +40,7 @@ Several classical image processing problems can be cast into this form, includin
 
 == Machine learning for inverse problems
 
-If stem:[\mathcal{T}] is an operator that maps images to images, such as the identity operator (denoising) or perhaps a subsampling (inpainting, superresolution) or a convolution (deconvolution), finding stem:[f] from stem:[g] using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
+If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding stem:[f] from stem:[g] using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]
 
@@ -49,6 +49,9 @@ But what happens when stem:[\mathcal{T}] is more complicated? We'll focus on CT,
 \mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
 +++++++++++++++++
 
-The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data space. And since the forward model is global, so is the inverse problem.
+The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data. And since the forward model is global, so is the inverse problem. This means that classical machine-learning approaches based on convolutions will not work, since these are local.
+
+One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has stem:[1000 \cdot 1000 = 10^6] points, and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^11] weights. Storing these in single precision would require one terrabyte of data. For a single layer. Obviously this is not a workable solution.
+
 
 
