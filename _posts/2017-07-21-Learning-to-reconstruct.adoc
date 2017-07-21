@@ -36,38 +36,40 @@ Several classical image processing problems can be cast into this form, includin
 
 == Machine learning for inverse problems
 
-If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding stem:[f] from stem:[g] using machine learning is at least on a conceptual level trivial, and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
+If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding stem:[f] from stem:[g] using machine learning is at least on a conceptual level trivial, and any standard convolutional architecture such as Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
-We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]
+We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]:
 
 [stem]
 +++++++++++++++++
 \mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
 +++++++++++++++++
 
-The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data. And since the forward model is global, so is the inverse problem. This means that classical machine-learning approaches based on convolutions will not work.
+The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
 
-One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has size stem:[1000 \times 1000 = 10^6], and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terrabyte of data. For a single layer. 
+One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has size stem:[1000 \times 1000 = 10^6] and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
 
 This is obviously not a workable solution.
 
 == Learned denoisers
 
-One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first apply some initial reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
+One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first do some initial reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
 
 video::mayo_fbp_animation.mp4[mayo_fbp_animation, height=309, width=600, options="autoplay,loop"]
 
-Once this has been applied, we can use any standard machine-learning approach to "denoise" the result by training a neural network to take low quality images as input and return high quality images.
+Once this has been applied, we can use any standard machine-learning approach to "denoise" the initial reconstruction by training a neural network to take the initial reconstruction as input and return the ground truth.
 
-Several people have done this and the results are in fact quite remarkable:
+Several groups have done this and the results are in fact quite remarkable:
 
 image:learned_denoiser.png[mayo_data, height=309, width=800]
 
-However, these methods leave a sour after-taste. Sure the images look better, but the only input they had was the low quality image. Hence they cannot possibly show something that was not present in the low quality image. So is the denoised image truly better?
+However, this method leave a sour after-taste. Sure the images certainly look better, but the only input they had was the initial reconstruction so could they truly show anything that wasn't already there? Or are they simply applying make-up?
 
 == Learned Primal-Dual
 
-This observation leads us to a painful conclusion: in order to get a reconstruction that contains more information than current reconstructions, we _need_ to work directly from raw data. But as we noted above, learning how to do this is practually impossible.
+This observation leads us to a painful conclusion: in order to get a reconstruction that contains more information than current reconstruction methods, we _need_ to work directly from raw data. But as we noted above, fully learning how to do this is practually impossible.
 
-A solution is to 
+The solution is to take a middle way, to incorporate sufficiently much information known a-priori to make the problem tractible and then learn the rest. 
+
+The most powerfull prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}].
