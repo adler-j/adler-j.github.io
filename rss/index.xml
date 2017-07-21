@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 20 Jul 2017 21:28:57 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learned Primal-Dual reconstruction]]></title><description><![CDATA[<div class="paragraph">
-<p>\(\circ, \ast\)</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 00:23:35 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruction]]></title><description><![CDATA[<div class="paragraph">
+<p>If I gave you this data:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://adler-j.github.io/images/shepp_logan_data.png" alt="shepp_logan">
+<img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data">
 </div>
-</div>]]></description><link>https://adler-j.github.io/2017/07/20/Learned-Primal-Dual-reconstruction.html</link><guid isPermaLink="true">https://adler-j.github.io/2017/07/20/Learned-Primal-Dual-reconstruction.html</guid><dc:creator><![CDATA[Jonas Adler]]></dc:creator><pubDate>Thu, 20 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
+</div>
+<div class="paragraph">
+<p>would you be able to tell that it was generated from this object?</p>
+</div>]]></description><link>https://adler-j.github.io/2017/07/21/Learning-to-reconstruction.html</link><guid isPermaLink="true">https://adler-j.github.io/2017/07/21/Learning-to-reconstruction.html</guid><dc:creator><![CDATA[Jonas Adler]]></dc:creator><pubDate>Fri, 21 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.
