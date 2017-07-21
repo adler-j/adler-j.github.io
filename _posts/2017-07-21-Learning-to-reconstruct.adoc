@@ -34,7 +34,7 @@ g = \mathcal{T}(f) + noise
 
 Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
-video::animation.mp4[]
+video::mayo_fbp_animation.mp4[]
 
 == Machine learning for inverse problems
 
