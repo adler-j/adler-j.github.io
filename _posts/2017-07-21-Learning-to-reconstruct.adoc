@@ -9,15 +9,21 @@
 
 = Learning to reconstruct
 
-If I gave you this data:
+If I gave you a smoothed image:
 
 image::mayo_convolved.png[mayo_convolved]
 
-would you be able to tell that it was generated from this object?
+would you be able to tell that it was generated from this image?
 
 image:mayo_phantom.png[mayo_phantom]
 
-Perhaps not, but we can teach a computer to do it.
+You probably could, and you might even think that it should be possible to teach a computer how to do it.
+
+But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?
+
+image:mayo_data.png[mayo_data]
+
+Probably not. But we will demonstrate how we can teach a computer to do it.
 
 == An introduction to inverse problems
 
@@ -28,7 +34,7 @@ Inverse problems refer to problems where one seeks to reconstruct some parameter
 g = \mathcal{T}(f) + noise
 +++++++++++++++++
 
-where stem:[g] is our measured data and stem:[f] is the signal we want to reconstruct. These are connected through the _forward model_ stem:[\mathcal{T}], which describes how some set of parameters gives rise to an observation.
+where stem:[g] is our measured data and stem:[f] is the parameters (signal) we want to reconstruct. These are connected through the _forward model_ stem:[\mathcal{T}], which describes how some set of parameters gives rise to an observation.
 
 Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
@@ -43,6 +49,6 @@ But what happens when stem:[\mathcal{T}] is more complicated? We'll focus on CT,
 \mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
 +++++++++++++++++
 
-The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data space. Because of this, inversion is no longer an (approximately) local problem as in image processing, but is a global problem.
+The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data space. And since the forward model is global, so is the inverse problem.
 
 
