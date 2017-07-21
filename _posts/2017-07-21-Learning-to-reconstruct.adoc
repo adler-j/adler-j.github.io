@@ -11,7 +11,7 @@
 
 If I gave you this data:
 
-image::mayo_data.png[mayo_data]
+image::mayo_convolved.png[mayo_convolved]
 
 would you be able to tell that it was generated from this object?
 
@@ -30,16 +30,19 @@ g = \mathcal{T}(f) + noise
 
 where stem:[g] is our measured data and stem:[f] is the signal we want to reconstruct. These are connected through the _forward model_ stem:[\mathcal{T}], which describes how some set of parameters gives rise to an observation.
 
-Several cases of classical image processing problems can be cast into this form, including denoising, inpainting, superresolution, etc. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
+Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
 == Machine learning for inverse problems
 
-If stem:[\mathcal{T}] is an operator that maps images to images, such as the identity operator (denoising) or perhaps a subsampling (inpainting, superresolution), finding stem:[f] from stem:[g] using machine learning is in some sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
+If stem:[\mathcal{T}] is an operator that maps images to images, such as the identity operator (denoising) or perhaps a subsampling (inpainting, superresolution) or a convolution (deconvolution), finding stem:[f] from stem:[g] using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]
 
 [stem]
 +++++++++++++++++
-\mathcal{T}(\signal)(\ell) = \int_{\ell} f(x) dx
+\mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
 +++++++++++++++++
+
+The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data space. Because of this, inversion is no longer an (approximately) local problem as in image processing, but is a global problem.
+
 
