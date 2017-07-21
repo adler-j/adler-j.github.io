@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 16:31:02 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 16:32:08 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>If I gave you a smoothed image:</p>
@@ -81,7 +81,7 @@ Your browser does not support the video tag.
 <p>Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. Several people have done this and the results are in fact quite remarkable:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/learned_denoiser.png" alt="mayo_data" width="600" height="400"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/learned_denoiser.png" alt="mayo_data" width="800" height="309"></span></p>
 </div>
 </div>
 </div>]]></description><link>https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</link><guid isPermaLink="true">https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</guid><dc:creator><![CDATA[Jonas Adler]]></dc:creator><pubDate>Fri, 21 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
