@@ -77,7 +77,7 @@ The most powerful prior information we have is the forward operator stem:[\mathc
 The idea of our proposed solution (called the _Learned Primal-Dual_ algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] and use the result as input to another neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a few times (10 in our experiments), at which point we have a final 
 reconstruction. 
 
-We train this end-to-end, with raw data as input and the reconstruction as output.
+We train end-to-end with raw measured data as input and the reconstruction as output, without any initial reconstruction or other external information.
 
 The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
