@@ -74,7 +74,7 @@ The solution is to take a middle way, to incorporate enough a-priori information
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data. How would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] and use the result as input to another neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.
+The idea of our proposed model (called the _Learned Primal-Dual_ algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] and use the result as input to another neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.
 
 The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
@@ -86,7 +86,7 @@ image:compare_results_anotated.png[compare_results_anotated, height=700, width=8
 
 The quantitative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] parameters used for the denoiser.
 
-[width="80%", height="60%", frame="topbot",cols="6,2,2,2,2",options="header"]
+[width="100%", height="60%", frame="topbot",cols="6,3,3,3,3",options="header"]
 |======================
 |Method | PSNR (dB) | SSIM | Runtime (ms) | Parameters
 |FBP        | 33.65 |  0.83 | 423  | 1
