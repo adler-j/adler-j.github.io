@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://adler-j.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//adler-j.github.io/themes/casper/assets/css/screen.css?v=1500753014390" />
+    <link rel="stylesheet" type="text/css" href="//adler-j.github.io/themes/casper/assets/css/screen.css?v=1500655660413" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html" />
@@ -21,12 +21,12 @@
     <meta property="og:site_name" content="Jonas Adler" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Learning to reconstruct" />
-    <meta property="og:description" content="Suppose that you were given a blurred image: Then you could probably tell that it was generated from this image: But what about if I instead gave you the line integrals of the image: Would you still tell it came from the image above? Probably not. But we will demonstrate" />
+    <meta property="og:description" content="If I gave you a smoothed image: you could probably tell that it was generated from this image But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above? Probably not. But we will demonstrate how we" />
     <meta property="og:url" content="https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html" />
     <meta property="article:published_time" content="2017-07-21T00:00:00.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Learning to reconstruct" />
-    <meta name="twitter:description" content="Suppose that you were given a blurred image: Then you could probably tell that it was generated from this image: But what about if I instead gave you the line integrals of the image: Would you still tell it came from the image above? Probably not. But we will demonstrate" />
+    <meta name="twitter:description" content="If I gave you a smoothed image: you could probably tell that it was generated from this image But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above? Probably not. But we will demonstrate how we" />
     <meta name="twitter:url" content="https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html" />
     
     <script type="application/ld+json">
@@ -45,7 +45,7 @@
     "headline": "Learning to reconstruct",
     "url": "https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html",
     "datePublished": "2017-07-21T00:00:00.000Z",
-    "description": "Suppose that you were given a blurred image: Then you could probably tell that it was generated from this image: But what about if I instead gave you the line integrals of the image: Would you still tell it came from the image above? Probably not. But we will demonstrate"
+    "description": "If I gave you a smoothed image: you could probably tell that it was generated from this image But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above? Probably not. But we will demonstrate how we"
 }
     </script>
 
@@ -82,35 +82,35 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Suppose that you were given a blurred image:</p>
+<p>If I gave you a smoothed image:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved" width="300" height="300">
+<img src="https://adler-j.github.io/images/mayo_convolved.png" alt="mayo_convolved" width="400" height="400">
 </div>
 </div>
 <div class="paragraph">
-<p>Then you could probably tell that it was generated from this image:</p>
+<p>you could probably tell that it was generated from this image</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom" width="300" height="300"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_phantom.png" alt="mayo_phantom" width="400" height="400"></span></p>
 </div>
 <div class="paragraph">
-<p>But what about if I instead gave you the line integrals of the image:</p>
+<p>But what about if I instead gave you the line integrals of the image. Would you still tell it came from the image above?</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data" width="300" height="300"></span></p>
+<p><span class="image"><img src="https://adler-j.github.io/images/mayo_data.png" alt="mayo_data" width="400" height="400"></span></p>
 </div>
 <div class="paragraph">
-<p>Would you still tell it came from the image above? Probably not. But we will demonstrate how we can teach a computer to do it.</p>
+<p>Probably not. But we will demonstrate how we can teach a computer to do it.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_an_introduction_to_inverse_problems">An introduction to inverse problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Both of the above problems can be stated in the mathematical framework of inverse problems. In inverse problem we seek to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters \(f\) that are connected to measured data \(g\) through the <em>forward model</em> \(\mathcal{T}\):</p>
+<p>In inverse problems we seeks to reconstruct some parameters from indirect observations. Mathematically this can be written as finding some parameters \(f\) that is connected to our measured data \(g\) through the <em>forward model</em> \(\mathcal{T}\):</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -118,7 +118,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Several classical image processing problems such as denoising, inpainting, deblurring and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.</p>
+<p>Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.</p>
 </div>
 </div>
 </div>
@@ -126,11 +126,11 @@
 <h2 id="_machine_learning_for_inverse_problems">Machine learning for inverse problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If \(\mathcal{T}\) maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from \(g\) to \(f\). Simply give the neural network \(g\) as input and train it to find \(f\).</p>
+<p>If \(\mathcal{T}\) maps images to images, such as the convolution above, finding \(f\) from \(g\) using machine learning is in a sense trivial (at least on a conceptual level), and any architecture such as Denoising Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from \(g\) to \(f\).</p>
 </div>
 <div class="paragraph">
 <p>But what happens when \(\mathcal{T}\) is more complicated?
-We&#8217;ll focus on CT, where the forward model is given by the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a> which computes all line integrals of the image:</p>
+We&#8217;ll focus on CT, where the forward model is given by the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a></p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -138,13 +138,10 @@ We&#8217;ll focus on CT, where the forward model is given by the <a href="https:
 </div>
 </div>
 <div class="paragraph">
-<p>If we compare this to the deblurring problem, we see that while the blurring problem has a local relationship between parameters and data, the radon transform has a global relationship. Here two widely separated points can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.</p>
+<p>The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data. And since the forward model is global, so is the inverse problem. This means that classical machine-learning approaches based on convolutions will not work, since these are local.</p>
 </div>
 <div class="paragraph">
-<p>One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example a single fully connected layer between data and signal would require a staggering \(2.6 \cdot 10^{11}\) weights. Storing these in single precision would require one terabyte of data. For a single layer.</p>
-</div>
-<div class="paragraph">
-<p>This is obviously not a workable solution.</p>
+<p>One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has \(1000 \cdot 1000 = 10^6\) points, and the signal \(512 \times 512 = 2.6 \cdot 10^5\). A single fully connected layer between these would require a staggering \(10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^11\) weights. Storing these in single precision would require one terrabyte of data. For a single layer. Obviously this is not a workable solution.</p>
 </div>
 </div>
 </div>
@@ -152,109 +149,20 @@ We&#8217;ll focus on CT, where the forward model is given by the <a href="https:
 <h2 id="_learned_denoisers">Learned denoisers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first do some initial reconstruction, e.g. <a href="https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula">Filtered Back-Projection</a> (FBP):</p>
+<p>One of the most obvious solutions to this problem is to somehow re-cast the problem back into a image-to-image problem. The most popular way of doing this is to first apply some initial reconstruction, e.g. <a href="https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula">Filtered Back-Projection</a> (FBP):</p>
 </div>
 <div class="videoblock">
 <div class="content">
-<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" width="700" height="309" poster="https://adler-j.github.io/images/mayo_fbp_animation" autoplay controls loop>
+<video src="https://adler-j.github.io/images/mayo_fbp_animation.mp4" controls>
 Your browser does not support the video tag.
 </video>
 </div>
 </div>
 <div class="paragraph">
-<p>Once this has been applied, we can use any standard machine-learning approach to "denoise" the initial reconstruction by training a neural network to take the initial reconstruction as input and return the ground truth.</p>
-</div>
-<div class="paragraph">
-<p>Several groups have done this and the results are in fact quite remarkable:</p>
+<p>Once this has been applied, we can use any standard machine-learning approach to "denoise" the result. Several people have done this and the results are in fact quite remarkable:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="https://adler-j.github.io/images/learned_denoiser.png" alt="mayo_data" width="800" height="309"></span></p>
-</div>
-<div class="paragraph">
-<p>However, the method leaves a sour after-taste. Sure the images certainly look better, but the only input was the initial reconstruction, so could it truly show anything that wasn&#8217;t already there?</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_learned_primal_dual">Learned Primal-Dual</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This observation leads to a painful conclusion: in order to get a reconstruction that contains more information than current reconstruction methods, we <em>need</em> to work directly from raw data. But as we noted above, fully learning how to do this is practically impossible.</p>
-</div>
-<div class="paragraph">
-<p>The solution is to take a middle way, to incorporate enough a-priori information  to make the problem tractable and then learn the rest.</p>
-</div>
-<div class="paragraph">
-<p>The most powerful prior information we have is the forward operator \(\mathcal{T}\), but it only maps images to data, how would we go from data to reconstruction? One answer is to use the <a href="https://en.wikipedia.org/wiki/Hermitian_adjoint">adjoint operator</a> \(\mathcal{T}^*\).</p>
-</div>
-<div class="paragraph">
-<p>The idea of our proposed model is to use these operators alternatively. First we use a neural network to update the data (a so called <strong>dual</strong> step), then apply \(\mathcal{T}^*\) to this and use it as input to a neural network which updates the reconstruction (the <strong>primal</strong> step), then apply \(\mathcal{T}\) and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.</p>
-</div>
-<div class="paragraph">
-<p>The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with <a href="https://github.com/odlgroup/odl">Operator Discretization Library</a> and TensorFlow.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_results">Results</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you ask me, the results look quite good and I especially appreciate that the method is able to avoid some artifacts (shown with red arrows) that the denoiser just wasn&#8217;t able to remove:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="https://adler-j.github.io/images/compare_results_anotated.png" alt="compare_results_anotated" width="800" height="700"></span></p>
-</div>
-<div class="paragraph">
-<p>The quantitative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio <a href="https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio">(PSNR)</a> and structural similarity index <a href="https://en.wikipedia.org/wiki/Structural_similarity">(SSIM)</a>. The runtime is not too shabby either and we manage to do all of this using only \(2\%\) parameters used for the denoiser.</p>
-</div>
-<table class="tableblock frame-topbot grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Method</th>
-<th class="tableblock halign-left valign-top">PSNR</th>
-<th class="tableblock halign-left valign-top">SSIM</th>
-<th class="tableblock halign-left valign-top">Runtime</th>
-<th class="tableblock halign-left valign-top">Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FBP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">33.65</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.830</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">423</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Learned Denoiser</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">41.92</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.941</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">463</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(10^7\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Learned Primal-Dual</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>44.11</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>0.969</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">620</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(2.4 \cdot 10^5\)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_read_more">Read more</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you found this interesting you could read our article "Learned Primal-Dual Reconstruction" on <a href="https://arxiv.org/abs/1707.06474">ArXiv</a>, where we describe the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the <a href="https://github.com/adler-j/learned_primal_dual">source code</a>.</p>
 </div>
 </div>
 </div>
@@ -329,8 +237,8 @@ Your browser does not support the video tag.
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1500753014390"></script>
-    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/index.js?v=1500753014390"></script>
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1500655660413"></script>
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/index.js?v=1500655660413"></script>
 
 </body>
 </html>
