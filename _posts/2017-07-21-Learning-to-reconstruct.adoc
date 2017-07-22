@@ -23,7 +23,7 @@ image:mayo_data.png[mayo_data, height=300, width=300]
 
 Would you still tell it came from the image above? Probably not. But we will demonstrate how we can teach a computer to do it.
 
-== An introduction to inverse problems
+== Introduction
 
 In inverse problems we seeks to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters stem:[f] that is connected to our measured data stem:[g] through the _forward model_ stem:[\mathcal{T}]:
 
@@ -82,14 +82,14 @@ The good thing about this is that we've now separated out the global aspect of t
 
 Text
 
-[width="50%", height="60%", frame="topbot",cols="8,^2,^2",options="header"]
+[width="60%", height="80%", frame="topbot",cols="8,^2,^2,^2",options="header"]
 |======================
-|Method | PSNR | SSIM
-|FBP        | 33.65 |  0.830 
-|TV        | 33.65 |   0.946 
-|Learned Denoiser        | 41.92 | 0.941 
-|Learned Primal-Dual        | *44.11* | *0.969*
+|Method | PSNR | SSIM | Parameters
+|FBP        | 33.65 |  0.830 | 1
+|TV        | 37.48 |   0.946 | 1
+|Learned Denoiser        | 41.92 | 0.941 | stem:[10^7]
+|Learned Primal-Dual        | *44.11* | *0.969* | stem:[2.4 \cdot 10^5]
 |======================
 
-image:compare_results.png[compare_results, height=700, width=800]
+image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
