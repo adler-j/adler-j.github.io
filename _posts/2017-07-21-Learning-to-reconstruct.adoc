@@ -48,7 +48,7 @@ We'll focus on CT, where the forward model is given by the https://en.wikipedia.
 
 If we compare this to the deblurring problem, we see that while the blurring problem has a local relationship between parameters and data, the radon transform has a global relationship. Here two widely separated points can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
 
-One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example aboveta single fully connected layer between data and signal would require a staggering stem:[2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
+One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example a single fully connected layer between data and signal would require a staggering stem:[2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
 
 This is obviously not a workable solution.
 
@@ -64,27 +64,27 @@ Several groups have done this and the results are in fact quite remarkable:
 
 image:learned_denoiser.png[mayo_data, height=309, width=800]
 
-However, this method leaves a sour after-taste. Sure the images certainly look better, but the only input they had was the initial reconstruction so could they truly show anything that wasn't already there? Or are they simply applying make-up?
+However, the method leaves a sour after-taste. Sure the images certainly look better, but the only input was the initial reconstruction, so could it truly show anything that wasn't already there?
 
 == Learned Primal-Dual
 
-This observation leads us to a painful conclusion: in order to get a reconstruction that contains more information than current reconstruction methods, we _need_ to work directly from raw data. But as we noted above, fully learning how to do this is practually impossible.
+This observation leads to a painful conclusion: in order to get a reconstruction that contains more information than current reconstruction methods, we _need_ to work directly from raw data. But as we noted above, fully learning how to do this is practically impossible.
 
-The solution is to take a middle way, to incorporate sufficiently much information known a-priori to make the problem tractible and then learn the rest. 
+The solution is to take a middle way, to incorporate enough a-priori information  to make the problem tractable and then learn the rest.
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, all the way from data to reconstruction.
+The idea of our proposed model is to use these operators alternatively. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.
 
-The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
+The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
 == Results
 
-If you ask me, the results look quite good and we especially note that the proposed method is able to remove some artifacts (shown with red arrows) that the denoiser just wasn't able to remove:
+If you ask me, the results look quite good and I especially appreciate that the method is able to avoid some artifacts (shown with red arrows) that the denoiser just wasn't able to remove:
 
 image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
-The quantiative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] of the number of parameters used for the denoiser.
+The quantitative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] parameters used for the denoiser.
 
 [width="100%", height="60%", frame="topbot",cols="8,2,2,2,2",options="header"]
 |======================
