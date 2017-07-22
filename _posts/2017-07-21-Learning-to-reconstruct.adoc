@@ -64,7 +64,7 @@ Several groups have done this and the results are in fact quite remarkable:
 
 image:learned_denoiser.png[mayo_data, height=309, width=800]
 
-However, this method leave a sour after-taste. Sure the images certainly look better, but the only input they had was the initial reconstruction so could they truly show anything that wasn't already there? Or are they simply applying make-up?
+However, this method leaves a sour after-taste. Sure the images certainly look better, but the only input they had was the initial reconstruction so could they truly show anything that wasn't already there? Or are they simply applying make-up?
 
 == Learned Primal-Dual
 
@@ -74,15 +74,19 @@ The solution is to take a middle way, to incorporate sufficiently much informati
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network and update the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction.
+The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction.
 
-The good thing about this is that we've now separated out the global aspect of the problem into the forward model and its adjoint, and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
+The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint, and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
 == Results
 
-Text
+If you ask me, the results look quite good and we especially note that the proposed method is able to remove some artifacts (shown with red arrows) that the denoiser just wasn't able to
 
-[width="60%", height="80%", frame="topbot",cols="8,^2,^2,^2",options="header"]
+image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
+
+The quantiative results are also quite cool, 
+
+[width="80%", height="80%", frame="topbot",cols="8,^2,^2,^2",options="header"]
 |======================
 |Method | PSNR | SSIM | Parameters
 |FBP        | 33.65 |  0.830 | 1
@@ -91,5 +95,4 @@ Text
 |Learned Primal-Dual        | *44.11* | *0.969* | stem:[2.4 \cdot 10^5]
 |======================
 
-image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
