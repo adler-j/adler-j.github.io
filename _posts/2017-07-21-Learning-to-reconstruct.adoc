@@ -32,7 +32,7 @@ In inverse problems we seeks to find (reconstruct) some parameters given indirec
 g = \mathcal{T}(f) + noise
 +++++++++++++++++
 
-Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated modalities such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
+Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
 == Machine learning for inverse problems
 
@@ -74,14 +74,21 @@ The solution is to take a middle way, to incorporate sufficiently much informati
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model is to use these operators alternatingly, first use a neural network to update the data (a so called *dual* step), then apply the adjoint operator to this and use it as input to a neural network and udate the reconstruction (the *primal* step). This is iteratively performed 10 times, at which point we have a final reconstruction.
+The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network and udate the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction.
 
-The method can be written:
+The good thing about this is that we've now separated out the global aspect of the problem into the forward model and its adjoint, and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
-[stem]
-+++++++++++++++++
-\begin{align*}
-	h_{i + 1} =&\ \Gamma_{\theta_i^d} \bigl(h_{i}, \mathcal{T}(f_i), g\bigr) \\
-	f_{i + 1} =&\ \Lambda_{\theta_i^p} \bigl(f_{i}, \mathcal{T}^*(h_{i + 1}) \bigr)
-\end{align*}
-+++++++++++++++++
+== Results
+
+Text
+
+[width="40%",frame="topbot",options="header,footer"]
+|======================
+|Method | PSNR | SSIM
+|1        | 33.65 |  0.830 
+|Learned Denoiser        |Item 2
+|Learned Primal-Dual        | *44.11* | *0.969*
+|======================
+
+image:compare_results.png[compare_results, height=309, width=800]
+
