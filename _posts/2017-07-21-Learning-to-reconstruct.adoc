@@ -25,18 +25,18 @@ Would you still tell it came from the image above? Probably not. But we will dem
 
 == Introduction
 
-In inverse problems we seeks to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters stem:[f] that is connected to our measured data stem:[g] through the _forward model_ stem:[\mathcal{T}]:
+Both of the above problems can be stated in the mathematical framework of inverse problems. In inverse problem we seek to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters stem:[f] that are connected to measured data stem:[g] through the _forward model_ stem:[\mathcal{T}]:
 
 [stem]
 +++++++++++++++++
 g = \mathcal{T}(f) + noise
 +++++++++++++++++
 
-Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
+Several classical image processing problems such as denoising, inpainting, deconvolution and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
 == Machine learning for inverse problems
 
-If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding stem:[f] from stem:[g] using machine learning is at least on a conceptual level trivial, and any standard convolutional architecture such as Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from stem:[g] to stem:[f].
+If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture such could be used to learn a transformation from stem:[g] to stem:[f]. Simply give the neural network stem:[g] as input and train it to find stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
 We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]:
@@ -96,4 +96,4 @@ The quantiative results are also quite cool and we outperform learned denoising 
 
 == Read more
 
-If you found this interesting you could read our article "Learned Primal-Dual Reconstruction", available on https://arxiv.org/abs/1707.06474[ArXiv], where we go into the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the https://github.com/adler-j/learned_primal_dual[source code].
+If you found this interesting you could read our article "Learned Primal-Dual Reconstruction" on https://arxiv.org/abs/1707.06474[ArXiv], where we describe the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the https://github.com/adler-j/learned_primal_dual[source code].
