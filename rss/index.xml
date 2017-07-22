@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 22 Jul 2017 22:47:53 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonas Adler]]></title><description><![CDATA[Ramblings on programming and mathematics]]></description><link>https://adler-j.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 22 Jul 2017 23:39:22 GMT</lastBuildDate><atom:link href="https://adler-j.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Learning to reconstruct]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Suppose that you were given a blurred image:</p>
@@ -104,10 +104,14 @@ Your browser does not support the video tag.
 <p>The solution is to take a middle way, to incorporate enough a-priori information  to make the problem tractable and then learn the rest.</p>
 </div>
 <div class="paragraph">
-<p>The most powerful prior information we have is the forward operator \(\mathcal{T}\), but it only maps images to data. How would we go from data to reconstruction? One answer is to use the <a href="https://en.wikipedia.org/wiki/Hermitian_adjoint">adjoint operator</a> \(\mathcal{T}^*\).</p>
+<p>The most powerful prior information we have is the forward operator \(\mathcal{T}\), but it only maps images to data. How would we go from data to images? One answer is to use the <a href="https://en.wikipedia.org/wiki/Hermitian_adjoint">adjoint operator</a> \(\mathcal{T}^*\).</p>
 </div>
 <div class="paragraph">
-<p>The idea of our proposed solution (called the <em>Learned Primal-Dual</em> algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called <strong>dual</strong> step), then apply \(\mathcal{T}^*\) and use the result as input to another neural network which updates the reconstruction (the <strong>primal</strong> step), then apply \(\mathcal{T}\) and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.</p>
+<p>The idea of our proposed solution (called the <em>Learned Primal-Dual</em> algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called <strong>dual</strong> step), then apply \(\mathcal{T}^*\) and use the result as input to another neural network which updates the reconstruction (the <strong>primal</strong> step), then apply \(\mathcal{T}\) and use it as input to a neural network that updates the data, and so on. This is iteratively performed a few times (10 in our experiments), at which point we have a final
+reconstruction.</p>
+</div>
+<div class="paragraph">
+<p>We train end-to-end with raw measured data as input and the reconstruction as output, without any initial reconstruction or other external information.</p>
 </div>
 <div class="paragraph">
 <p>The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with <a href="https://github.com/odlgroup/odl">Operator Discretization Library</a> and TensorFlow.</p>
@@ -124,7 +128,7 @@ Your browser does not support the video tag.
 <p><span class="image"><img src="https://adler-j.github.io/images/compare_results_anotated.png" alt="compare_results_anotated" width="800" height="700"></span></p>
 </div>
 <div class="paragraph">
-<p>The quantitative results are also quite good and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio <a href="https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio">(PSNR)</a> and structural similarity index <a href="https://en.wikipedia.org/wiki/Structural_similarity">(SSIM)</a>. The runtime is not too shabby either and we manage to do all of this using only \(2\%\) of the trainable parameters used for the denoiser.</p>
+<p>The quantitative results are also quite good and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio <a href="https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio">(PSNR)</a> and structural similarity index <a href="https://en.wikipedia.org/wiki/Structural_similarity">(SSIM)</a>. The runtime is not too shabby either and we manage to do all of this using only \(2\%\) of the trainable parameters used in the denoiser.</p>
 </div>
 <table class="tableblock frame-topbot grid-all spread">
 <colgroup>
@@ -173,7 +177,7 @@ Your browser does not support the video tag.
 <h2 id="_read_more">Read more</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you found this interesting you should read our article "Learned Primal-Dual Reconstruction" on <a href="https://arxiv.org/abs/1707.06474">ArXiv</a> where we describe the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the <a href="https://github.com/adler-j/learned_primal_dual">source code</a>.</p>
+<p>If you found this interesting you should read our article "Learned Primal-Dual Reconstruction" on <a href="https://arxiv.org/abs/1707.06474">ArXiv</a> which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the <a href="https://github.com/adler-j/learned_primal_dual">source code</a>.</p>
 </div>
 </div>
 </div>]]></description><link>https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</link><guid isPermaLink="true">https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html</guid><dc:creator><![CDATA[Jonas Adler]]></dc:creator><pubDate>Fri, 21 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0]]></title><description><![CDATA[<div id="preamble">
