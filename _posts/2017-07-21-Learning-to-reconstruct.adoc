@@ -74,25 +74,26 @@ The solution is to take a middle way, to incorporate sufficiently much informati
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data, how would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction.
+The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, all the way from data to reconstruction.
 
-The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint, and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
+The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
 == Results
 
-If you ask me, the results look quite good and we especially note that the proposed method is able to remove some artifacts (shown with red arrows) that the denoiser just wasn't able to
+If you ask me, the results look quite good and we especially note that the proposed method is able to remove some artifacts (shown with red arrows) that the denoiser just wasn't able to remove:
 
 image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
-The quantiative results are also quite cool, 
+The quantiative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2%] of the number of parameters used for the denoiser.
 
-[width="80%", height="80%", frame="topbot",cols="8,^2,^2,^2",options="header"]
+[width="100%", height="60%", frame="topbot",cols="8,2,2,2,2",options="header"]
 |======================
-|Method | PSNR | SSIM | Parameters
-|FBP        | 33.65 |  0.830 | 1
-|TV        | 37.48 |   0.946 | 1
-|Learned Denoiser        | 41.92 | 0.941 | stem:[10^7]
-|Learned Primal-Dual        | *44.11* | *0.969* | stem:[2.4 \cdot 10^5]
+|Method | PSNR | SSIM | Runtime | Parameters
+|FBP        | 33.65 |  0.830 | 423  | 1
+|Learned Denoiser        | 41.92 | 0.941 | 463 | stem:[10^7]
+|Learned Primal-Dual        | *44.11* | *0.969* | 620 | stem:[2.4 \cdot 10^5]
 |======================
 
+== Read more
 
+If you found this interesting you could read our article "Learned Primal-Dual Reconstruction", available on https://arxiv.org/abs/1707.06474[ArXiv], where we go into the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the https://github.com/adler-j/learned_primal_dual[source code].
