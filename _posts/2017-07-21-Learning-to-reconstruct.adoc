@@ -82,13 +82,14 @@ The good thing about this is that we've now separated out the global aspect of t
 
 Text
 
-[width="40%",frame="topbot",options="header,footer"]
+[width="50%",frame="topbot",cols="8,^2,^2",options="header"]
 |======================
 |Method | PSNR | SSIM
-|1        | 33.65 |  0.830 
-|Learned Denoiser        |Item 2
+|FBP        | 33.65 |  0.830 
+|TV        | 33.65 |   0.946 
+|Learned Denoiser        | 41.92 | 0.941 
 |Learned Primal-Dual        | *44.11* | *0.969*
 |======================
 
-image:compare_results.png[compare_results, height=309, width=800]
+image:compare_results.png[compare_results, height=700, width=800]
 
