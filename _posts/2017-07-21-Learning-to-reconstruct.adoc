@@ -39,7 +39,7 @@ Several classical image processing problems such as denoising, inpainting, deblu
 If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from stem:[g] to stem:[f]. Simply give the neural network stem:[g] as input and train it to find stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
-We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]:
+We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform] which computes all line integrals of the image:
 
 [stem]
 +++++++++++++++++
@@ -48,7 +48,7 @@ We'll focus on CT, where the forward model is given by the https://en.wikipedia.
 
 If we compare this to the deblurring problem, we see that while the blurring problem has a local relationship between parameters and data, the radon transform has a global relationship. Here two widely separated points can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
 
-One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has size stem:[1000 \times 1000 = 10^6] and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
+One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example aboveta single fully connected layer between data and signal would require a staggering stem:[2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
 
 This is obviously not a workable solution.
 
@@ -76,7 +76,7 @@ The most powerful prior information we have is the forward operator stem:[\mathc
 
 The idea of our proposed model is to use these operators alternatingly. First we use a neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] to this and use it as input to a neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, all the way from data to reconstruction.
 
-The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this enormous neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
+The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train this we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
 == Results
 
@@ -84,7 +84,7 @@ If you ask me, the results look quite good and we especially note that the propo
 
 image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
-The quantiative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2%] of the number of parameters used for the denoiser.
+The quantiative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] of the number of parameters used for the denoiser.
 
 [width="100%", height="60%", frame="topbot",cols="8,2,2,2,2",options="header"]
 |======================
