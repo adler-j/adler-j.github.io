@@ -9,7 +9,7 @@
 
 = Learning to reconstruct
 
-Suppose that you were given a smoothed image:
+Suppose that you were given a blurred image:
 
 image::mayo_convolved.png[mayo_convolved, height=300, width=300]
 
@@ -32,11 +32,11 @@ Both of the above problems can be stated in the mathematical framework of invers
 g = \mathcal{T}(f) + noise
 +++++++++++++++++
 
-Several classical image processing problems such as denoising, inpainting, deconvolution and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
+Several classical image processing problems such as denoising, inpainting, deblurring and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.
 
 == Machine learning for inverse problems
 
-If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture such could be used to learn a transformation from stem:[g] to stem:[f]. Simply give the neural network stem:[g] as input and train it to find stem:[f].
+If stem:[\mathcal{T}] maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from stem:[g] to stem:[f]. Simply give the neural network stem:[g] as input and train it to find stem:[f].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
 We'll focus on CT, where the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform]:
@@ -46,7 +46,7 @@ We'll focus on CT, where the forward model is given by the https://en.wikipedia.
 \mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
 +++++++++++++++++
 
-The main complication here is that we have a global relationship between signal and data, where two widely separated points in an image can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
+If we compare this to the deblurring problem, we see that while the blurring problem has a local relationship between parameters and data, the radon transform has a global relationship. Here two widely separated points can both influence a point in data as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
 
 One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example, in the example above the data has size stem:[1000 \times 1000 = 10^6] and the signal stem:[512 \times 512 = 2.6 \cdot 10^5]. A single fully connected layer between these would require a staggering stem:[10^6 \cdot 2.6 \cdot 10^5 = 2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
 
