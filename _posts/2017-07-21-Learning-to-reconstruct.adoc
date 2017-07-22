@@ -36,7 +36,7 @@ Several classical image processing problems such as denoising, inpainting, deblu
 
 == Machine learning for inverse problems
 
-If the forward model maps images to images, such as the blurring above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from data to parameters. Simply use known pairs stem:[g, f_{\text{true}}] and train a neural network to map stem:[g] to stem:[f_{\text{true}].
+If the forward model maps images to images, such as the blurring above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from data to parameters. Simply use known pairs stem:[g, f_{\text{true}}] and train a neural network to map stem:[g] to stem:[f_{\text{true}}].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
 In Computed Tomography, the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform] which computes all line integrals of the image:
@@ -86,12 +86,12 @@ image:compare_results_anotated.png[compare_results_anotated, height=700, width=8
 
 The quantitative results are also quite cool and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] parameters used for the denoiser.
 
-[width="100%", height="60%", frame="topbot",cols="8,2,2,2,2",options="header"]
+[width="80%", height="60%", frame="topbot",cols="6,2,2,2,2",options="header"]
 |======================
-|Method | PSNR | SSIM | Runtime | Parameters
-|FBP        | 33.65 |  0.830 | 423  | 1
-|Denoiser        | 41.92 | 0.941 | 463 | stem:[10^7]
-|Proposed        | *44.11* | *0.969* | 620 | stem:[2.4 \cdot 10^5]
+|Method | PSNR (dB) | SSIM | Runtime (ms) | Parameters
+|FBP        | 33.65 |  0.83 | 423  | 1
+|Denoiser        | 41.92 | 0.94 | 463 | stem:[10^7]
+|Proposed        | *44.11* | *0.97* | 620 | stem:[2.4 \cdot 10^5]
 |======================
 
 == Read more
