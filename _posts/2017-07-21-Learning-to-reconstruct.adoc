@@ -87,7 +87,7 @@ If you ask me, the results look quite good and I especially appreciate that the 
 
 image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
-The quantitative results are also quite good and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] of the trainable parameters used for the denoiser.
+The quantitative results are also quite good and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio[(PSNR)] and structural similarity index https://en.wikipedia.org/wiki/Structural_similarity[(SSIM)]. The runtime is not too shabby either and we manage to do all of this using only stem:[2\%] of the trainable parameters used in the denoiser.
 
 [width="100%", height="60%", frame="topbot",cols="5,3,2,3,3",options="header"]
 |======================
@@ -99,4 +99,4 @@ The quantitative results are also quite good and we outperform learned denoising
 
 == Read more
 
-If you found this interesting you should read our article "Learned Primal-Dual Reconstruction" on https://arxiv.org/abs/1707.06474[ArXiv] where we describe the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the https://github.com/adler-j/learned_primal_dual[source code].
+If you found this interesting you should read our article "Learned Primal-Dual Reconstruction" on https://arxiv.org/abs/1707.06474[ArXiv] which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the https://github.com/adler-j/learned_primal_dual[source code].
