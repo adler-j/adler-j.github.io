@@ -39,7 +39,7 @@ Several classical image processing problems such as denoising, inpainting, deblu
 If the forward model maps images to images, such as the blurring above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from data to parameters. Simply use known pairs stem:[g, f_{\text{true}}] and train a neural network to map stem:[g] to stem:[f_{\text{true}}].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
-In Computed Tomography, the parameters stem:[f] is an image of the patient and the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform] which computes all line integrals of the image:
+In Computed Tomography, the parameters stem:[f] is an image of the interior of the patient and the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform] which computes all line integrals of the image:
 
 [stem]
 +++++++++++++++++
