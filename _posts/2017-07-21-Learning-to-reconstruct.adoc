@@ -36,7 +36,7 @@ Several classical image processing problems such as denoising, inpainting, deblu
 
 == Machine learning for inverse problems
 
-If the forward model maps images to images, such as the blurring above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from data to parameters. Simply use known pairs stem:[g, f_{\text{true}}] and train a neural network to map stem:[g] to stem:[f_{\text{true}}].
+If the forward model maps images to images, such as deblurring, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture could be used to learn a transformation from data to parameters. Simply use known pairs stem:[(g, f_{\text{true}})] and train a neural network to map stem:[g] to stem:[f_{\text{true}}].
 
 But what happens when stem:[\mathcal{T}] is more complicated? 
 In Computed Tomography, the parameters stem:[f] is an image of the interior of the patient and the forward model is given by the https://en.wikipedia.org/wiki/Radon_transform[Radon transform] which computes all line integrals of the image:
@@ -74,7 +74,7 @@ The solution is to take a middle way, to incorporate enough a-priori information
 
 The most powerful prior information we have is the forward operator stem:[\mathcal{T}], but it only maps images to data. How would we go from data to reconstruction? One answer is to use the https://en.wikipedia.org/wiki/Hermitian_adjoint[adjoint operator] stem:[\mathcal{T}^*].
 
-The idea of our proposed model (called the _Learned Primal-Dual_ algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] and use the result as input to another neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.
+The idea of our proposed solution (called the _Learned Primal-Dual_ algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called *dual* step), then apply stem:[\mathcal{T}^*] and use the result as input to another neural network which updates the reconstruction (the *primal* step), then apply stem:[\mathcal{T}] and use it as input to a neural network that updates the data, and so on. This is iteratively performed a fixed number of times (10 in our experiments), at which point we have a final reconstruction. We train this end-to-end, with raw data as input and the reconstruction as output.
 
 The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
 
