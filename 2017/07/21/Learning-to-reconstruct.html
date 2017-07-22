@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://adler-j.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//adler-j.github.io/themes/casper/assets/css/screen.css?v=1500723990820" />
+    <link rel="stylesheet" type="text/css" href="//adler-j.github.io/themes/casper/assets/css/screen.css?v=1500724711777" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://adler-j.github.io/2017/07/21/Learning-to-reconstruct.html" />
@@ -110,7 +110,7 @@
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In inverse problems we seeks to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters \(f\) that is connected to our measured data \(g\) through the <em>forward model</em> \(\mathcal{T}\):</p>
+<p>Both of the above problems can be stated in the mathematical framework of inverse problems. In inverse problem we seek to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters \(f\) that are connected to measured data \(g\) through the <em>forward model</em> \(\mathcal{T}\):</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -118,7 +118,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Several classical image processing problems can be cast into this form, including denoising, inpainting, deconvolution and superresolution. But it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.</p>
+<p>Several classical image processing problems such as denoising, inpainting, deconvolution and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Computed Tomography (CT), Magnetic Resonance Imaging (MRI), etc.</p>
 </div>
 </div>
 </div>
@@ -126,7 +126,7 @@
 <h2 id="_machine_learning_for_inverse_problems">Machine learning for inverse problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If \(\mathcal{T}\) maps images to images, such as the convolution above, finding \(f\) from \(g\) using machine learning is at least on a conceptual level trivial, and any standard convolutional architecture such as Autoencoders, Generative Advesarial Networks, etc could be used to learn a transformation from \(g\) to \(f\).</p>
+<p>If \(\mathcal{T}\) maps images to images, such as the convolution above, finding the unknown parameters from data using machine learning is at least on a conceptual level straightforward, and any standard convolutional architecture such could be used to learn a transformation from \(g\) to \(f\). Simply give the neural network \(g\) as input and train it to find \(f\).</p>
 </div>
 <div class="paragraph">
 <p>But what happens when \(\mathcal{T}\) is more complicated?
@@ -254,7 +254,7 @@ Your browser does not support the video tag.
 <h2 id="_read_more">Read more</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you found this interesting you could read our article "Learned Primal-Dual Reconstruction", available on <a href="https://arxiv.org/abs/1707.06474">ArXiv</a>, where we go into the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the <a href="https://github.com/adler-j/learned_primal_dual">source code</a>.</p>
+<p>If you found this interesting you could read our article "Learned Primal-Dual Reconstruction" on <a href="https://arxiv.org/abs/1707.06474">ArXiv</a>, where we describe the method in depth and give a broader overview of what others have done in this exciting field. You could also throw an eye on the <a href="https://github.com/adler-j/learned_primal_dual">source code</a>.</p>
 </div>
 </div>
 </div>
@@ -329,8 +329,8 @@ Your browser does not support the video tag.
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1500723990820"></script>
-    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/index.js?v=1500723990820"></script>
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1500724711777"></script>
+    <script type="text/javascript" src="//adler-j.github.io/themes/casper/assets/js/index.js?v=1500724711777"></script>
 
 </body>
 </html>
