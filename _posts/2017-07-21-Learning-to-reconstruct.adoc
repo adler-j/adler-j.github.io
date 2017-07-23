@@ -48,13 +48,13 @@ In Computed Tomography, the parameters stem:[f] is an image of the interior of t
 
 If we compare this to the deblurring problem, we see that while the deblurring problem has a local relationship between parameters and data, the radon transform has a global relationship. Here two points on opposite sides of the image can still influence the same datapoint as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.
 
-One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example in the example above a single fully connected layer between data and signal would require a staggering stem:[2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of data. For a single layer. 
+One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example in the example above a single fully connected layer between data and signal would require a staggering stem:[2.6 \cdot 10^{11}] weights. Storing these in single precision would require one terabyte of memory. For a single layer. 
 
 This is obviously not a workable solution.
 
 == Learned denoisers
 
-One of the most obvious solutions to this is to somehow recast the problem to an image-to-image problem. The most popular way of doing this is to first perform some initial reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
+One of the most obvious solutions to this is to somehow recast the problem to an image-to-image problem. The most popular way of doing this is to first perform some initial (non machine-learning) reconstruction, e.g. https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula[Filtered Back-Projection] (FBP):
 
 video::mayo_fbp_animation.mp4[mayo_fbp_animation, height=360, width=700, options="autoplay,loop"]
 
@@ -92,7 +92,7 @@ The quantitative results are also quite good and we outperform learned denoising
 [width="100%", height="60%", frame="topbot",cols="5,3,2,3,3",options="header"]
 |======================
 |Method          | PSNR (dB) | SSIM   | Runtime (ms) | Parameters
-|FBP             | 33.65     |  0.83  | 423          | 1
+|FBP             | 33.65     | 0.83   | *423*        | *1*
 |Denoiser        | 41.92     | 0.94   | 463          | stem:[10^7]
 |Proposed        | *44.11*   | *0.97* | 620          | stem:[2.4 \cdot 10^5]
 |======================
