@@ -64,7 +64,7 @@ Several groups have done this and the results are in fact quite remarkable, http
 
 image:learned_denoiser.png[mayo_data, height=309, width=800]
 
-However, the method leaves a sour after-taste. Sure the images certainly look better, but the only input was the initial reconstruction, so could it truly show anything that wasn't already there?
+However, the method leaves a sour taste. Sure the images certainly look better, but the only input was the initial reconstruction, so could it truly show anything that wasn't already there?
 
 == Learned Primal-Dual
 
