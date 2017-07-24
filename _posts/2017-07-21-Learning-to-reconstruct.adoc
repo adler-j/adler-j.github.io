@@ -79,11 +79,11 @@ reconstruction.
 
 We train end-to-end with raw measured data as input and the reconstruction as output, without any initial reconstruction or other external information.
 
-The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with https://github.com/odlgroup/odl[Operator Discretization Library] and TensorFlow.
+The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with Operator Discretization Library (https://github.com/odlgroup/odl[ODL]) and TensorFlow.
 
 == Results
 
-If you ask me, the results look quite good and I especially appreciate that the method is able to avoid some artifacts (some examples shown with red arrows) that the denoiser just wasn't able to remove:
+If you ask me, the results look quite good and I especially appreciate that the method is able to avoid some artifacts (some examples shown with red arrows) that the denoiser wasn't able:
 
 image:compare_results_anotated.png[compare_results_anotated, height=700, width=800]
 
