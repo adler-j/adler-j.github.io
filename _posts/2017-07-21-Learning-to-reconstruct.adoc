@@ -17,7 +17,7 @@ Then you could probably tell that it was generated from this image:
 
 image:mayo_phantom.png[mayo_phantom, height=300, width=300]
 
-But what about if you instead were given *indirect* observations of the image, such as the line integrals taken over some set of lines:
+But what about if you instead were given _indirect_ observations of the image, such as the line integrals taken over some set of lines:
 
 image:mayo_data.png[mayo_data, height=300, width=300]
 
