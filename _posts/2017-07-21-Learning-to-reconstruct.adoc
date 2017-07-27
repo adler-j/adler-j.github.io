@@ -17,7 +17,7 @@ Then you could probably tell that it was generated from this image:
 
 image:mayo_phantom.png[mayo_phantom, height=300, width=300]
 
-But what about if you instead got the line integrals of the image:
+But what about if you instead were given *indirect* observations of the image, such as the line integrals taken over some set of lines:
 
 image:mayo_data.png[mayo_data, height=300, width=300]
 
@@ -25,7 +25,7 @@ Would you still tell it came from the image above? Probably not. But we will dem
 
 == Introduction
 
-These problems are called the deblurring and radon inversion problems respectively and are both examples of _inverse problems_. In inverse problem we seek to find (reconstruct) some parameters given indirect observations. Mathematically this can be stated as finding some parameters stem:[f] that are connected to measured data stem:[g] through a known _forward model_ stem:[\mathcal{T}]:
+These problems are called the deblurring and radon inversion problems respectively and are both examples of _inverse problems_. In inverse problem we seek to find (reconstruct) some parameter given indirect observations. Mathematically this can be stated as finding some parameter stem:[f] that are connected to measured data stem:[g] through a known _forward model_ stem:[\mathcal{T}]:
 
 [stem]
 +++++++++++++++++
