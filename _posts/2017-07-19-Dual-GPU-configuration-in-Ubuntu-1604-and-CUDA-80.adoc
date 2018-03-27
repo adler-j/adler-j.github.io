@@ -12,6 +12,8 @@ Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GP
 The primary GPU will be used for computations and the secondary one will be used for displaying graphics. 
 In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and a NVIDIA Quadro K620 as secondary GPU.
 
+Note: if the computer already have a working installation of Ubuntu 16.04 with build-essentails installed you should (probably) not have to reinstall it, meaning that the first two steps can be skipped. Moreover, sometimes the installation procedure works also without removing the secondary GPU (see step 1 and step 22).
+
 .  Turn off computer, ensure only the primary GPU is connected to the motherboard.
     Boot from USB with Ubuntu 16.04 LTS installation, 
     install a fresh copy of Ubuntu 16.04 LTS but keep Windows partitions intact, 
