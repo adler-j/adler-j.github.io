@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1 on Jonas Adler</title>
-    <link>https://adler-j.github.io/publication_types/1/</link>
+    <link>http://jonasadler.com/publication_types/1/</link>
     <description>Recent content in 1 on Jonas Adler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://adler-j.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://jonasadler.com/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deep Learning Framework for Digital Breast Tomosynthesis Reconstruction</title>
-      <link>https://adler-j.github.io/publication/deep_learning_digital_breast_tomosynthesis/</link>
+      <link>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
       
-      <guid>https://adler-j.github.io/publication/deep_learning_digital_breast_tomosynthesis/</guid>
+      <guid>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to solve inverse problems using Wasserstein loss</title>
-      <link>https://adler-j.github.io/publication/learning_inverse_wasserstein/</link>
+      <link>http://jonasadler.com/publication/learning_inverse_wasserstein/</link>
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0100</pubDate>
       
-      <guid>https://adler-j.github.io/publication/learning_inverse_wasserstein/</guid>
+      <guid>http://jonasadler.com/publication/learning_inverse_wasserstein/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A modified fuzzy C means algorithm for shading correction in craniofacial CBCT images</title>
-      <link>https://adler-j.github.io/publication/a_modified_fuzzy_c_means/</link>
+      <link>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
-      <guid>https://adler-j.github.io/publication/a_modified_fuzzy_c_means/</guid>
+      <guid>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</guid>
       <description></description>
     </item>
     

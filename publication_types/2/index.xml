@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 on Jonas Adler</title>
-    <link>https://adler-j.github.io/publication_types/2/</link>
+    <link>http://jonasadler.com/publication_types/2/</link>
     <description>Recent content in 2 on Jonas Adler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://adler-j.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://jonasadler.com/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EDS tomographic reconstruction regularized by total nuclear variation joined with HAADF-STEM tomography</title>
-      <link>https://adler-j.github.io/publication/eds_tomo_recon/</link>
+      <link>http://jonasadler.com/publication/eds_tomo_recon/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       
-      <guid>https://adler-j.github.io/publication/eds_tomo_recon/</guid>
+      <guid>http://jonasadler.com/publication/eds_tomo_recon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Model based learning for accelerated, limited-view 3D photoacoustic tomography</title>
-      <link>https://adler-j.github.io/publication/model-based-learning-photoacoustic/</link>
+      <link>http://jonasadler.com/publication/model-based-learning-photoacoustic/</link>
       <pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
       
-      <guid>https://adler-j.github.io/publication/model-based-learning-photoacoustic/</guid>
+      <guid>http://jonasadler.com/publication/model-based-learning-photoacoustic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learned Primal-Dual Reconstruction</title>
-      <link>https://adler-j.github.io/publication/learned-primal-dual/</link>
+      <link>http://jonasadler.com/publication/learned-primal-dual/</link>
       <pubDate>Wed, 05 Jul 2017 00:00:00 +0200</pubDate>
       
-      <guid>https://adler-j.github.io/publication/learned-primal-dual/</guid>
+      <guid>http://jonasadler.com/publication/learned-primal-dual/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Solving ill-posed inverse problems using iterative deep neural networks</title>
-      <link>https://adler-j.github.io/publication/learning-to-solve/</link>
+      <link>http://jonasadler.com/publication/learning-to-solve/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0200</pubDate>
       
-      <guid>https://adler-j.github.io/publication/learning-to-solve/</guid>
+      <guid>http://jonasadler.com/publication/learning-to-solve/</guid>
       <description></description>
     </item>
     
