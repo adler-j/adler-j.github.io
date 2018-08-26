@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0 on Jonas Adler</title>
+    <link>/publication_types/0/</link>
+    <description>Recent content in 0 on Jonas Adler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 02 Aug 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/publication_types/0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data-driven Nonsmooth Optimization</title>
+      <link>/publication/data_driven_nonsmooth_optimization/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/data_driven_nonsmooth_optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Banach Wasserstein GAN</title>
+      <link>/publication/bwgan/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/bwgan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPUMCI: a flexible platform for x-ray imaging on the GPU</title>
+      <link>/publication/gpumci/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/gpumci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spectral CT reconstruction with anti-correlated noise model and joint prior</title>
+      <link>/publication/spectral_ct_anticorrelated/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/publication/spectral_ct_anticorrelated/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
