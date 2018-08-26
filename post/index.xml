@@ -18,10 +18,9 @@
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/post/learning_to_reconstruct/</guid>
-      <description>Suppose that you were given a blurred image:
-Then you could probably tell that it was generated from this image:
-But what about if you instead were given indirect observations of the image, such as the line integrals taken over some set of lines:
-Would you still tell it came from the image above? Probably not. But we will demonstrate how we can teach a computer to do it.</description>
+      <description>&lt;p&gt;An introduction to some Machine Learning methods for image reconstruction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -30,9 +29,9 @@ Would you still tell it came from the image above? Probably not. But we will dem
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/post/install_cuda/</guid>
-      <description>Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.
-The primary GPU will be used for computations and the secondary one will be used for displaying graphics. In this example, the computer is a HP Z640 with NVIDIA Titan-X Pascal as primary GPU and a NVIDIA Quadro K620 as secondary GPU.
-Note: if the computer already have a working installation of Ubuntu 16.04 with build-essentials installed you should (probably) not have to reinstall it, meaning that the first two steps can be skipped.</description>
+      <description>&lt;p&gt;Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

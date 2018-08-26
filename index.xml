@@ -133,7 +133,9 @@
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/post/learning_to_reconstruct/</guid>
-      <description>
+      <description>&lt;p&gt;An introduction to some Machine Learning methods for image reconstruction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Suppose that you were given a blurred image:&lt;/p&gt;
 
@@ -253,8 +255,7 @@ reconstruction.&lt;/p&gt;
 
 &lt;h2 id=&#34;read-more&#34;&gt;Read more&lt;/h2&gt;
 
-&lt;p&gt;If you found this interesting you should read our article &amp;ldquo;Learned Primal-Dual Reconstruction&amp;rdquo; on &lt;a href=&#34;https://arxiv.org/abs/1707.06474&#34; target=&#34;_blank&#34;&gt;arXiv&lt;/a&gt; which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the &lt;a href=&#34;https://github.com/adler-j/learned_primal_dual&#34; target=&#34;_blank&#34;&gt;source code&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;If you found this interesting you should read our article &amp;ldquo;Learned Primal-Dual Reconstruction&amp;rdquo; on &lt;a href=&#34;https://arxiv.org/abs/1707.06474&#34; target=&#34;_blank&#34;&gt;arXiv&lt;/a&gt; which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the &lt;a href=&#34;https://github.com/adler-j/learned_primal_dual&#34; target=&#34;_blank&#34;&gt;source code&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
