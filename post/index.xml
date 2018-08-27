@@ -14,10 +14,10 @@
     
     <item>
       <title>Learning to reconstruct</title>
-      <link>http://jonasadler.com/2017/07/22/learning-to-reconstruct/</link>
+      <link>http://jonasadler.com/post/learning_to_reconstruct/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0200</pubDate>
       
-      <guid>http://jonasadler.com/2017/07/22/learning-to-reconstruct/</guid>
+      <guid>http://jonasadler.com/post/learning_to_reconstruct/</guid>
       <description>&lt;p&gt;An introduction to some Machine Learning methods for image reconstruction.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Dual GPU configuration in Ubuntu 16.04 and CUDA 8.0</title>
-      <link>http://jonasadler.com/2016/12/28/dual-gpu-configuration-in-ubuntu-16.04-and-cuda-8.0/</link>
+      <link>http://jonasadler.com/post/install_cuda/</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0100</pubDate>
       
-      <guid>http://jonasadler.com/2016/12/28/dual-gpu-configuration-in-ubuntu-16.04-and-cuda-8.0/</guid>
+      <guid>http://jonasadler.com/post/install_cuda/</guid>
       <description>&lt;p&gt;Instructions for installing and configuring Ubuntu 16.04 LTE on a PC with two GPUs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
