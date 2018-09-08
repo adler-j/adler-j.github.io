@@ -170,6 +170,25 @@
         
 
         <li class="nav-item">
+          <a href="/#news" data-target="#news">
+            
+            <span>News</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a href="/#posts" data-target="#posts">
             
             <span>Posts</span>
@@ -189,7 +208,7 @@
         
 
         <li class="nav-item">
-          <a href="/#publications_selected" data-target="#publications_selected">
+          <a href="/#publications" data-target="#publications">
             
             <span>Publications</span>
             
@@ -284,13 +303,10 @@
 
 
 
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-address">
   <div class="col-xs-12 col-md-4">
     <div id="profile">
 
-      
-      <div class="portrait" style="background-image: url('/img/portrait.jpg');"></div>
-      <meta itemprop="image" content="http://jonasadler.com/img/portrait.jpg">
       
 
       <div class="portrait-title">
@@ -423,6 +439,32 @@
 
     </div>
   </div>
+</div>
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+  <section id="news" class="home-section">
+    <div class="container">
+      
+
+
+<div class="row">
+  
+  <div class="col-xs-12 col-md-4 section-heading">
+    <h1>News</h1>
+    
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <p><strong>Sept 2018:</strong> <a href="http://jonasadler.com/publication/bwgan/" target="_blank">Banach Wasserstein GAN</a> has been accepted for publication at NIPS.
+<strong>Sept 2018:</strong> New preprint: <a href="http://jonasadler.com/publication/task_adapted_recon/" target="_blank">Task adapted reconstruction for inverse problems</a>.</p>
+
+  </div>
+  
 </div>
 
     </div>
@@ -640,305 +682,6 @@
   
   
   
-  <section id="publications_selected" class="home-section">
-    <div class="container">
-      
-
-
-
-<div class="row">
-  <div class="col-xs-12 col-md-4 section-heading">
-    <h1>Selected Publications</h1>
-    
-  </div>
-  <div class="col-xs-12 col-md-8">
-    
-
-    
-      
-    
-
-    
-    
-      
-        <div class="pub-list-item card-simple" itemscope itemtype="http://schema.org/CreativeWork">
-
-  
-  
-
-  <h3 class="article-title" itemprop="name">
-    <a href="http://jonasadler.com/publication/data_driven_nonsmooth_optimization/" itemprop="url">Data-driven Nonsmooth Optimization</a>
-  </h3>
-
-  <div class="pub-abstract" itemprop="text">
-    
-    We show how learning can be applied to proximal Primal-Dual schemes while still guaranteeing convergence.
-    
-  </div>
-
-  <div class="pub-authors" itemprop="author">
-    
-    Sebastian Banert, Axel Ringh, Jonas Adler, Johan Karlsson, Ozan Öktem
-    
-  </div>
-
-  <div class="pub-publication">
-    
-    arXiv,
-    
-    2018
-  </div>
-
-  <div class="pub-links">
-    
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/abs/1808.00946" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/pdf/1808.00946" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/aringh/data-driven_nonsmooth_optimization" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-</div>
-
-      
-    
-      
-        <div class="pub-list-item card-simple" itemscope itemtype="http://schema.org/CreativeWork">
-
-  
-  
-
-  <h3 class="article-title" itemprop="name">
-    <a href="http://jonasadler.com/publication/bwgan/" itemprop="url">Banach Wasserstein GAN</a>
-  </h3>
-
-  <div class="pub-abstract" itemprop="text">
-    
-    Generalizing Wasserstein GAN with gradient penalty to Banach Spaces.
-    
-  </div>
-
-  <div class="pub-authors" itemprop="author">
-    
-    Jonas Adler, Sebastian Lunz
-    
-  </div>
-
-  <div class="pub-publication">
-    
-    arXiv,
-    
-    2018
-  </div>
-
-  <div class="pub-links">
-    
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/abs/1806.06621" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/pdf/1806.06621" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/adler-j/bwgan" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-</div>
-
-      
-    
-      
-        <div class="pub-list-item card-simple" itemscope itemtype="http://schema.org/CreativeWork">
-
-  
-  
-
-  <h3 class="article-title" itemprop="name">
-    <a href="http://jonasadler.com/publication/learned-primal-dual/" itemprop="url">Learned Primal-Dual Reconstruction</a>
-  </h3>
-
-  <div class="pub-abstract" itemprop="text">
-    
-    By learning in both reconstruction and data domain, we can improve image reconstruction.
-    
-  </div>
-
-  <div class="pub-authors" itemprop="author">
-    
-    Jonas Adler, Ozan Öktem
-    
-  </div>
-
-  <div class="pub-publication">
-    
-    IEEE - Transactions on Medical Imaging,
-    
-    2017
-  </div>
-
-  <div class="pub-links">
-    
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/abs/1707.06474" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/pdf/1707.06474.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/adler-j/learned_primal_dual" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-</div>
-
-      
-    
-      
-        <div class="pub-list-item card-simple" itemscope itemtype="http://schema.org/CreativeWork">
-
-  
-  
-
-  <h3 class="article-title" itemprop="name">
-    <a href="http://jonasadler.com/publication/learning-to-solve/" itemprop="url">Solving ill-posed inverse problems using iterative deep neural networks</a>
-  </h3>
-
-  <div class="pub-abstract" itemprop="text">
-    
-    A deep learning scheme for solving inverse problems that incorporates knowledge about the data formation process, improving both speed and quality compared to classical methods.
-    
-  </div>
-
-  <div class="pub-authors" itemprop="author">
-    
-    Jonas Adler, Ozan Öktem
-    
-  </div>
-
-  <div class="pub-publication">
-    
-    Inverse Problems,
-    
-    2017
-  </div>
-
-  <div class="pub-links">
-    
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/abs/1704.04058" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/pdf/1704.04058" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/adler-j/learned_gradient_tomography" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-</div>
-
-      
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-  
-
-  
-  
-  
   <section id="publications" class="home-section">
     <div class="container">
       
@@ -969,6 +712,45 @@
     
 
     
+    
+      
+        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
+  <span itemprop="author">
+    Jonas Adler, Sebastian Lunz, Olivier Verdier, Carola-Bibiane Schönlieb, Ozan Öktem</span>.
+  <a href="http://jonasadler.com/publication/task_adapted_recon/" itemprop="name">Task adapted reconstruction for inverse problems</a>.
+  arXiv,
+  2018.
+  <p>
+
+
+
+<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/abs/1809.00948" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+<a class="btn btn-primary btn-outline btn-xs" href="https://arxiv.org/pdf/1809.00948" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+</div>
+
+      
     
       
         <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
@@ -1314,37 +1096,6 @@
 <a class="btn btn-primary btn-outline btn-xs" href="https://github.com/adler-j/learned_gradient_tomography" target="_blank" rel="noopener">
   Code
 </a>
-
-
-
-
-
-
-
-
-
-
-</p>
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="author">
-    Awais Ashfaq, Jonas Adler</span>.
-  <a href="http://jonasadler.com/publication/a_modified_fuzzy_c_means/" itemprop="name">A modified fuzzy C means algorithm for shading correction in craniofacial CBCT images</a>.
-  IFMBE Proceedings,
-  2017.
-  <p>
-
-
-
-
-
-
-
 
 
 
@@ -1746,6 +1497,11 @@
 
       
 
+      
+      <li>
+        <i class="fa-li fa fa-map-marker fa-2x" aria-hidden="true"></i>
+        <span id="person-address" itemprop="address">Lindstedtsvägen 25, KTH Campus</span>
+      </li>
       
 
       

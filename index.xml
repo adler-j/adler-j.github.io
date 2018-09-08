@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Task adapted reconstruction for inverse problems</title>
+      <link>http://jonasadler.com/publication/task_adapted_recon/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>http://jonasadler.com/publication/task_adapted_recon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deep Learning Framework for Digital Breast Tomosynthesis Reconstruction</title>
       <link>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
@@ -256,15 +265,6 @@ reconstruction.&lt;/p&gt;
 &lt;h2 id=&#34;read-more&#34;&gt;Read more&lt;/h2&gt;
 
 &lt;p&gt;If you found this interesting you should read our article &amp;ldquo;Learned Primal-Dual Reconstruction&amp;rdquo; on &lt;a href=&#34;https://arxiv.org/abs/1707.06474&#34; target=&#34;_blank&#34;&gt;arXiv&lt;/a&gt; which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the &lt;a href=&#34;https://github.com/adler-j/learned_primal_dual&#34; target=&#34;_blank&#34;&gt;source code&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Learned Primal-Dual Reconstruction</title>
-      <link>http://jonasadler.com/publication/learned-primal-dual/</link>
-      <pubDate>Wed, 05 Jul 2017 00:00:00 +0200</pubDate>
-      
-      <guid>http://jonasadler.com/publication/learned-primal-dual/</guid>
-      <description></description>
     </item>
     
   </channel>
