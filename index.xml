@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Invited talk: Deep Learning for Image Reconstruction</title>
+      <link>http://jonasadler.com/talk/2018icmsec/</link>
+      <pubDate>Fri, 19 Oct 2018 00:00:00 +0200</pubDate>
+      
+      <guid>http://jonasadler.com/talk/2018icmsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/publication/task_adapted_recon/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0200</pubDate>
@@ -134,137 +143,6 @@
       
       <guid>http://jonasadler.com/publication/model-based-learning-photoacoustic/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Learning to reconstruct</title>
-      <link>http://jonasadler.com/post/learning_to_reconstruct/</link>
-      <pubDate>Sat, 22 Jul 2017 00:00:00 +0200</pubDate>
-      
-      <guid>http://jonasadler.com/post/learning_to_reconstruct/</guid>
-      <description>&lt;p&gt;An introduction to some Machine Learning methods for image reconstruction.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose that you were given a blurred image:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;mayo_convolved.png&#34; alt=&#34;mayo_convolved&#34; width=&#34;300&#34; style=&#34;margin: 0px 20px; margin-left: auto; margin-right: auto&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Then you could probably tell that it was generated from this image:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;mayo_phantom.png&#34; alt=&#34;mayo_phantom&#34; width=&#34;300&#34; style=&#34;margin: 0px 20px; margin-left: auto; margin-right: auto&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;But what about if you instead were given &lt;em&gt;indirect&lt;/em&gt; observations of the image, such as the line integrals taken over some set of lines:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;mayo_data.png&#34; alt=&#34;mayo_data&#34; width=&#34;300&#34; style=&#34;margin: 0px 20px; margin-left: auto; margin-right: auto&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Would you still tell it came from the image above? Probably not. But we will demonstrate how we can teach a computer to do it.&lt;/p&gt;
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;These problems are called the deblurring and radon inversion problems respectively and are both examples of &lt;em&gt;inverse problems&lt;/em&gt;. In inverse problem we seek to find (reconstruct) some parameter given indirect observations. Mathematically this can be stated as finding some parameter $f$ that are connected to measured data $g$ through a known &lt;em&gt;forward model&lt;/em&gt; $\mathcal{T}$:&lt;/p&gt;
-
-&lt;p&gt;$$
-g = \mathcal{T}(f) + noise
-$$&lt;/p&gt;
-
-&lt;p&gt;Several classical image processing problems such as denoising, inpainting, deblurring and superresolution can be cast into this form, but it is also a good model for more complicated problems such as Magnetic Resonance Imaging (MRI) and Computed Tomography (CT).&lt;/p&gt;
-
-&lt;h2 id=&#34;machine-learning-for-inverse-problems&#34;&gt;Machine learning for inverse problems&lt;/h2&gt;
-
-&lt;p&gt;If the forward model is local, such as in deblurring where each datapoint is affected only by a small neighborhood of the image, finding the unknown parameter from data using machine learning is at least on a conceptual level straightforward. Simply use any standard convolutional neural network and known pairs $(g, f_{\text{true}})$ and train the neural network to map $g$ to $f_{\text{true}}$.&lt;/p&gt;
-
-&lt;p&gt;But what happens when $\mathcal{T}$ is more complicated?
-In Computed Tomography, the parameter $f$ is an image of the interior of the patient and the forward model is given by the &lt;a href=&#34;https://en.wikipedia.org/wiki/Radon_transform&#34; target=&#34;_blank&#34;&gt;Radon Transform&lt;/a&gt; which computes all line integrals of the image:&lt;/p&gt;
-
-&lt;p&gt;$$
-\mathcal{T}(f)(\ell) = \int_{\ell} f(x) dx  \quad \ell \text{ is a line in } \mathbb{R}^2
-$$&lt;/p&gt;
-
-&lt;p&gt;If we compare this to the deblurring problem, we see that while the deblurring problem has a local relationship between parameter and data, the radon transform has a global relationship. Here two points on opposite sides of the image can still influence the same datapoint as long as they lie on the same line. And since the forward model is global, so is the inverse problem. This means that classical local machine-learning approaches based on convolutions will not work.&lt;/p&gt;
-
-&lt;p&gt;One way to solve this would be to use fully-connected layers instead of convolutions, but this quickly becomes infeasible. For example in the example above a single fully connected layer between data and signal would require a staggering $2.6 \cdot 10^{11}$ weights. Storing these in single precision would require one terabyte of memory. For a single layer.&lt;/p&gt;
-
-&lt;p&gt;This is obviously not a workable solution.&lt;/p&gt;
-
-&lt;h2 id=&#34;learned-denoisers&#34;&gt;Learned denoisers&lt;/h2&gt;
-
-&lt;p&gt;One of the most obvious solutions to this is to somehow recast the problem to an image-to-image problem. The most popular way of doing this is to first perform some initial (non machine-learning) reconstruction, e.g. &lt;a href=&#34;https://en.wikipedia.org/wiki/Radon_transform#Radon_inversion_formula&#34; target=&#34;_blank&#34;&gt;Filtered Back-Projection&lt;/a&gt; (FBP):&lt;/p&gt;
-
-&lt;video loop autoplay style=&#34;margin: 0px 0px&#34;&gt;&lt;source src=&#34;mayo_fbp_animation.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;
-
-&lt;p&gt;Once this is done we can use any standard machine-learning approach to &amp;ldquo;denoise&amp;rdquo; the initial reconstruction by training a neural network to take the initial reconstruction as data and return the ground truth.&lt;/p&gt;
-
-&lt;p&gt;Several groups have done this and the results are in fact quite remarkable, &lt;a href=&#34;http://bioeng.kaist.ac.kr/en/2016/09/01/bispl-were-the-1st-and-2nd-place-winners-of-the-ct-low-dose-grand-challenge&#34; target=&#34;_blank&#34;&gt;outperforming previous state of the art methods&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;learned_denoiser.png&#34; alt=&#34;learned_denoiser&#34; width=&#34;650&#34; style=&#34;margin: 0px 20px; margin-left: auto; margin-right: auto&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;However, the method leaves a sour taste. Sure the images certainly look better, but the only input was the initial reconstruction, so could it truly show anything that wasn&amp;rsquo;t already there?&lt;/p&gt;
-
-&lt;h2 id=&#34;learned-primal-dual&#34;&gt;Learned Primal-Dual&lt;/h2&gt;
-
-&lt;p&gt;This observation leads to a painful conclusion: in order to obtain a reconstruction with more information than current reconstruction methods, &lt;em&gt;we need to work directly from raw data&lt;/em&gt;. But as we noted above, fully learning how to do this is practically impossible.&lt;/p&gt;
-
-&lt;p&gt;The solution is to take a middle way, to incorporate enough a-priori information  to make the problem tractable and then learn the rest.&lt;/p&gt;
-
-&lt;p&gt;The most powerful prior information we have is the forward operator $\mathcal{T}$, but it only maps images to data. How would we go from data to images? One answer is to use the &lt;a href=&#34;https://en.wikipedia.org/wiki/Hermitian_adjoint&#34; target=&#34;_blank&#34;&gt;adjoint operator&lt;/a&gt; $\mathcal{T}^*$.&lt;/p&gt;
-
-&lt;p&gt;The idea of our proposed solution (called the &lt;em&gt;Learned Primal-Dual&lt;/em&gt; algorithm) is to use these operators alternatively. First we use a convolutional neural network to update the data (a so called &lt;em&gt;dual&lt;/em&gt; step), then apply $\mathcal{T}^*$ and use the result as input to another neural network which updates the reconstruction (the &lt;em&gt;primal&lt;/em&gt; step), then apply $\mathcal{T}$ and use it as input to a neural network that updates the data, and so on. This is iteratively performed a few times (10 in our experiments), at which point we have a final
-reconstruction.&lt;/p&gt;
-
-&lt;p&gt;We train end-to-end with raw measured data as input and the reconstruction as output, without any initial reconstruction or other external information.&lt;/p&gt;
-
-&lt;p&gt;The good thing about this is that we separate the global aspect of the problem into the forward model and its adjoint and only need to learn the local aspects. The bad thing is that to train the network we need to perform back-propagation through this neural network that among others contain 10 calls to the forward operator, 10 calls the the adjoint operator and 20 small neural networks in between. We did this using some magic with Operator Discretization Library &lt;a href=&#34;https://github.com/odlgroup/odl&#34; target=&#34;_blank&#34;&gt;ODL&lt;/a&gt; and TensorFlow.&lt;/p&gt;
-
-&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-
-&lt;p&gt;If you ask me, the results look quite good and I especially appreciate that the method is able to avoid some artifacts (some examples shown with red arrows) that the denoiser wasn&amp;rsquo;t able:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;compare_results_anotated.png&#34; alt=&#34;compare_results_anotated&#34; width=&#34;500&#34; style=&#34;margin: 0px 20px; margin-left: auto; margin-right: auto&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;The quantitative results are also quite good and we outperform learned denoising w.r.t both Peak Signal to Noise Ratio &lt;a href=&#34;https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio&#34; target=&#34;_blank&#34;&gt;(PSNR)&lt;/a&gt; and structural similarity index &lt;a href=&#34;https://en.wikipedia.org/wiki/Structural_similarity&#34; target=&#34;_blank&#34;&gt;(SSIM)&lt;/a&gt;. The runtime is not too shabby either and we manage to do all of this using only $2\%$ of the trainable parameters used in the denoiser.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Method&lt;/th&gt;
-&lt;th&gt;PSNR (dB)&lt;/th&gt;
-&lt;th&gt;SSIM&lt;/th&gt;
-&lt;th&gt;Runtime (ms)&lt;/th&gt;
-&lt;th&gt;Parameters&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;FBP&lt;/td&gt;
-&lt;td&gt;33.65&lt;/td&gt;
-&lt;td&gt;0.83&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;423&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Denoiser&lt;/td&gt;
-&lt;td&gt;41.92&lt;/td&gt;
-&lt;td&gt;0.94&lt;/td&gt;
-&lt;td&gt;463&lt;/td&gt;
-&lt;td&gt;$10^7$&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Proposed&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;44.11&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;0.97&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;620&lt;/td&gt;
-&lt;td&gt;$2.4 \cdot 10^5$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;read-more&#34;&gt;Read more&lt;/h2&gt;
-
-&lt;p&gt;If you found this interesting you should read our article &amp;ldquo;Learned Primal-Dual Reconstruction&amp;rdquo; on &lt;a href=&#34;https://arxiv.org/abs/1707.06474&#34; target=&#34;_blank&#34;&gt;arXiv&lt;/a&gt; which describes the method in depth and gives a broader overview of what others have done in this exciting field. You could also have a look on the &lt;a href=&#34;https://github.com/adler-j/learned_primal_dual&#34; target=&#34;_blank&#34;&gt;source code&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
