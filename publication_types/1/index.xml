@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Banach Wasserstein GAN</title>
+      <link>http://jonasadler.com/publication/bwgan/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0200</pubDate>
+      
+      <guid>http://jonasadler.com/publication/bwgan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Learning to solve inverse problems using Wasserstein loss</title>
       <link>http://jonasadler.com/publication/learning_inverse_wasserstein/</link>
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0100</pubDate>
