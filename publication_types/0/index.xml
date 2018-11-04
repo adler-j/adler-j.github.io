@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication_types/0/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/publication/task_adapted_recon/</link>
-      <pubDate>Mon, 27 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/task_adapted_recon/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Data-driven Nonsmooth Optimization</title>
       <link>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>GPUMCI: a flexible platform for x-ray imaging on the GPU</title>
       <link>http://jonasadler.com/publication/gpumci/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/gpumci/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Spectral CT reconstruction with anti-correlated noise model and joint prior</title>
       <link>http://jonasadler.com/publication/spectral_ct_anticorrelated/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/publication/spectral_ct_anticorrelated/</guid>
       <description></description>

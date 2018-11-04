@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>http://jonasadler.com/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/hero_carousel/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title></title>
       <link>http://jonasadler.com/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/about/</guid>
       <description>Biography I&amp;rsquo;m a Research Scientist at Elekta, pursuing a PhD in Applied Mathematics working under the supervision of Ozan Öktem.
@@ -34,19 +34,19 @@ I do research in inverse problems and machine learning, especially focusing on t
     <item>
       <title>News</title>
       <link>http://jonasadler.com/home/news/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/news/</guid>
-      <description>Oct 2018: I&amp;rsquo;m presenting Deep Learning for Image Reconstruction at the Chinese Academy of Sciences.
-Sept 2018: I&amp;rsquo;m organizing the international workshop Deep Learning and Inverse Problems 21-25 Jan 2019 in Stockholm.
-Sept 2018: Banach Wasserstein GAN has been accepted for publication at NIPS.
-Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</description>
+      <description>Oct 2018: I&amp;rsquo;m visiting Matthias Ehrhardt at the University of Bath to give a seminar on Data-driven optimization Tuesday, Nov 20 at 1.15 pm.
+Oct 2018: Our extended abstract for Task adapted reconstruction for inverse problems has been accepted at Medical Imaging meets NIPS.
+Oct 2018: I&amp;rsquo;m on an extended visit to Prof Carola Schönliebs group in Cambridge and the Alan Touring Institute from 29 Oct to 23 Nov.
+Oct 2018: I&amp;rsquo;m presenting Deep Learning for Image Reconstruction at the Chinese Academy of Sciences.</description>
     </item>
     
     <item>
       <title>Recent Posts</title>
       <link>http://jonasadler.com/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/posts/</guid>
       <description></description>
@@ -55,7 +55,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Selected Publications</title>
       <link>http://jonasadler.com/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/publications_selected/</guid>
       <description></description>
@@ -73,7 +73,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Recent Publications</title>
       <link>http://jonasadler.com/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/publications/</guid>
       <description></description>
@@ -82,7 +82,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Selected Talks</title>
       <link>http://jonasadler.com/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/talks_selected/</guid>
       <description></description>
@@ -91,7 +91,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>http://jonasadler.com/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/talks/</guid>
       <description></description>
@@ -100,7 +100,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Projects</title>
       <link>http://jonasadler.com/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/projects/</guid>
       <description></description>
@@ -109,7 +109,7 @@ Sept 2018: New preprint: Task adapted reconstruction for inverse problems.</desc
     <item>
       <title>Custom Section</title>
       <link>http://jonasadler.com/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
@@ -119,7 +119,7 @@ To remove this section, either delete content/home/teaching.md or edit the front
     <item>
       <title>Open Source</title>
       <link>http://jonasadler.com/home/open_source/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/open_source/</guid>
       <description> ODL Operator Discretization Library (ODL) is a Python library that enables research in inverse problems on realistic or real data.
@@ -130,7 +130,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Tags</title>
       <link>http://jonasadler.com/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/tags/</guid>
       <description></description>
@@ -139,7 +139,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Search</title>
       <link>http://jonasadler.com/home/search/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/search/</guid>
       <description></description>
@@ -148,7 +148,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Contact</title>
       <link>http://jonasadler.com/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/contact/</guid>
       <description> </description>
