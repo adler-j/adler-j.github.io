@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Deep Bayesian Inversion</title>
+      <link>http://jonasadler.com/publication/deep_bayesian/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jonasadler.com/publication/deep_bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Invited talk: Data-driven optimization</title>
       <link>http://jonasadler.com/talk/2018unibath/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
@@ -133,15 +142,6 @@
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/publication/learning_inverse_wasserstein/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Invited talk: Learned iterative reconstruction schemes, theory and practice</title>
-      <link>http://jonasadler.com/talk/2017variationalmethodsml/</link>
-      <pubDate>Mon, 18 Sep 2017 00:00:00 +0100</pubDate>
-      
-      <guid>http://jonasadler.com/talk/2017variationalmethodsml/</guid>
       <description></description>
     </item>
     

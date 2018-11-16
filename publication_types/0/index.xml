@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication_types/0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep Bayesian Inversion</title>
+      <link>http://jonasadler.com/publication/deep_bayesian/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jonasadler.com/publication/deep_bayesian/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Task adapted reconstruction for inverse problems</title>
