@@ -1,5 +1,24 @@
 [
   {
+    "authors": null,
+    "categories": null,
+    "content": "",
+    "date": 1544227200,
+    "expirydate": -62135596800,
+    "kind": "page",
+    "lang": "en",
+    "lastmod": 1544227200,
+    "objectID": "78640b98a7b96bd1a1bbeb99efdafd08",
+    "permalink": "http://jonasadler.com/talk/2018medneurips/",
+    "publishdate": "2018-12-08T00:00:00Z",
+    "relpermalink": "/talk/2018medneurips/",
+    "section": "talk",
+    "summary": "We consider the problem of performing a task defined on a model parameter that is only observed indirectly through noisy data in an ill-posed inverse problem. Several such tasks have been approached using deep neural networks, and recent advancements in image reconstruction using learned iterative schemes now enable us to have a fully differentiable, end-to-end trainable, imaging pipeline. The suggested framework is adaptable, with a plug-and-play structure for adjusting to both the inverse problem and the task at hand. The approach is demonstrated on joint tomographic image reconstruction and semantic segmentation.",
+    "tags": [],
+    "title": "Oral: Task adapted reconstruction for inverse problems",
+    "type": "talk"
+  },
+  {
     "authors": [
       "Jonas Adler",
       "Ozan Öktem"
