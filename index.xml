@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Invited Talk: Recent advances in using machine learning for image reconstruction</title>
+      <link>http://jonasadler.com/talk/2018nyu/</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jonasadler.com/talk/2018nyu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Oral: Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/talk/2018medneurips/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
@@ -133,15 +142,6 @@
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2017nips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contributed talk: Learned forward operators: Variational regularization for black-box models</title>
-      <link>http://jonasadler.com/talk/2017generative_models_parameter/</link>
-      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://jonasadler.com/talk/2017generative_models_parameter/</guid>
       <description></description>
     </item>
     
