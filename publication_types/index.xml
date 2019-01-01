@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication_types/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>0</title>
       <link>http://jonasadler.com/publication_types/0/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication_types/0/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>1</title>
       <link>http://jonasadler.com/publication_types/1/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication_types/1/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>2</title>
       <link>http://jonasadler.com/publication_types/2/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication_types/2/</guid>
       <description></description>

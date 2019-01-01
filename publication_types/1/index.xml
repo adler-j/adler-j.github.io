@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Deep Learning Framework for Digital Breast Tomosynthesis Reconstruction</title>
       <link>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Banach Wasserstein GAN</title>
       <link>http://jonasadler.com/publication/bwgan/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/bwgan/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Learning to solve inverse problems using Wasserstein loss</title>
       <link>http://jonasadler.com/publication/learning_inverse_wasserstein/</link>
-      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/learning_inverse_wasserstein/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>A modified fuzzy C means algorithm for shading correction in craniofacial CBCT images</title>
       <link>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</guid>
       <description></description>
