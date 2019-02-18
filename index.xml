@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Invited Talk: Deep learning for inverse problems. Where are we, and how far can we go?</title>
+      <link>http://jonasadler.com/talk/2019gamm/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0100</pubDate>
+      
+      <guid>http://jonasadler.com/talk/2019gamm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Invited Talk: Deep Posterior Sampling</title>
       <link>http://jonasadler.com/talk/2019basp/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0100</pubDate>
@@ -133,15 +142,6 @@
       <pubDate>Fri, 08 Jun 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/talk/2018siam_odl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Invited talk: What Can We Expect? Computable Upper Bounds to Machine Learning in Inverse Problems Using MCMC</title>
-      <link>http://jonasadler.com/talk/2018hpsc/</link>
-      <pubDate>Fri, 23 Mar 2018 00:00:00 +0100</pubDate>
-      
-      <guid>http://jonasadler.com/talk/2018hpsc/</guid>
       <description></description>
     </item>
     
