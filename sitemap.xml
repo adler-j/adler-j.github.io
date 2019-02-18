@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>http://jonasadler.com/talk/2019basp/</loc>
+      <lastmod>2019-02-04T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://jonasadler.com/talk/2019dlip/</loc>
+      <lastmod>2019-01-22T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>http://jonasadler.com/talk/2018nyu/</loc>
       <lastmod>2018-12-12T00:00:00+01:00</lastmod>
     </url>
@@ -252,6 +268,13 @@
     
     <url>
     
+      <loc>http://jonasadler.com/author/admin/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>http://jonasadler.com/publication_types/0/</loc>
       <lastmod>2018-11-16T00:00:00+01:00</lastmod>
       <priority>0</priority>
@@ -272,6 +295,14 @@
     
       <loc>http://jonasadler.com/publication_types/2/</loc>
       <lastmod>2018-08-01T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://jonasadler.com/author/</loc>
       <priority>0</priority>
     </url>
     
