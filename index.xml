@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Invited Talk: Deep learning for inverse problems. Where are we, and how far can we go?</title>
       <link>http://jonasadler.com/talk/2019gamm/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2019gamm/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>Invited Talk: Deep Posterior Sampling</title>
       <link>http://jonasadler.com/talk/2019basp/</link>
-      <pubDate>Mon, 04 Feb 2019 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2019basp/</guid>
       <description></description>
@@ -31,7 +31,7 @@
     <item>
       <title>Contributed Talk: Deep Bayesian Inversion</title>
       <link>http://jonasadler.com/talk/2019dlip/</link>
-      <pubDate>Tue, 22 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2019dlip/</guid>
       <description></description>
@@ -40,7 +40,7 @@
     <item>
       <title>Invited Talk: Recent advances in using machine learning for image reconstruction</title>
       <link>http://jonasadler.com/talk/2018nyu/</link>
-      <pubDate>Wed, 12 Dec 2018 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2018nyu/</guid>
       <description></description>
@@ -49,7 +49,7 @@
     <item>
       <title>Oral: Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/talk/2018medneurips/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2018medneurips/</guid>
       <description></description>
@@ -58,7 +58,7 @@
     <item>
       <title>Deep Bayesian Inversion</title>
       <link>http://jonasadler.com/publication/deep_bayesian/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/publication/deep_bayesian/</guid>
       <description></description>
@@ -67,7 +67,7 @@
     <item>
       <title>Invited talk: Deep Learning for Image Reconstruction</title>
       <link>http://jonasadler.com/talk/2018unibath/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jonasadler.com/talk/2018unibath/</guid>
       <description></description>
@@ -76,7 +76,7 @@
     <item>
       <title>Invited talk: Deep Learning for Image Reconstruction</title>
       <link>http://jonasadler.com/talk/2018icmsec/</link>
-      <pubDate>Fri, 19 Oct 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 19 Oct 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/talk/2018icmsec/</guid>
       <description></description>
@@ -85,7 +85,7 @@
     <item>
       <title>Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/publication/task_adapted_recon/</link>
-      <pubDate>Mon, 27 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/task_adapted_recon/</guid>
       <description></description>
@@ -94,7 +94,7 @@
     <item>
       <title>Deep Learning Framework for Digital Breast Tomosynthesis Reconstruction</title>
       <link>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</guid>
       <description></description>
@@ -103,7 +103,7 @@
     <item>
       <title>Data-driven Nonsmooth Optimization</title>
       <link>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</guid>
       <description></description>
@@ -112,7 +112,7 @@
     <item>
       <title>EDS tomographic reconstruction regularized by total nuclear variation joined with HAADF-STEM tomography</title>
       <link>http://jonasadler.com/publication/eds_tomo_recon/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/eds_tomo_recon/</guid>
       <description></description>
@@ -121,7 +121,7 @@
     <item>
       <title>Banach Wasserstein GAN</title>
       <link>http://jonasadler.com/publication/bwgan/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/bwgan/</guid>
       <description></description>
@@ -130,7 +130,7 @@
     <item>
       <title>Invited talk: Learned Iterative Reconstruction for CT</title>
       <link>http://jonasadler.com/talk/2018siam_ct/</link>
-      <pubDate>Fri, 08 Jun 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/talk/2018siam_ct/</guid>
       <description></description>
@@ -139,7 +139,7 @@
     <item>
       <title>Invited talk: Learning to solve inverse problems with ODL</title>
       <link>http://jonasadler.com/talk/2018siam_odl/</link>
-      <pubDate>Fri, 08 Jun 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/talk/2018siam_odl/</guid>
       <description></description>
