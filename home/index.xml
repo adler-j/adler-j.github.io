@@ -28,7 +28,7 @@
       
       <guid>http://jonasadler.com/home/about/</guid>
       <description>Biography I&amp;rsquo;m a Senior Research Scientist at Google DeepMind in the science team. Before that I was a Research Scientist at Elekta and pursued a PhD in Applied Mathematics under the supervision of Ozan Öktem.
-I do research in scientific machine learning, especially focusing on inverse problems and the intersection between model-driven and data-driven methods.</description>
+At DeepMind I work on scientific machine learning, especially focusing on inverse problems and the intersection between model-driven and data-driven methods. Among other things I&amp;rsquo;ve worked on AlphaFold, recongnized as a solution to the protein folding problem at CASP14.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ I do research in scientific machine learning, especially focusing on inverse pro
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/home/news/</guid>
-      <description>Nov 2020: Extremely proud to have worked on AlphaFold, recognized as a solution to the 50 year old protein folding problem at CASP14.
+      <description>Nov 2020: We have announced the new version of AlphaFold at CASP14.
 Jun 2019: I&amp;rsquo;m joining the Science team at DeepMind.
 Feb 2019: Giving an invited talk at BASP: Deep Posterior Sampling.
 Jan 2019: Organising DLIP and giving a talk on Deep Bayesian Inversion.
