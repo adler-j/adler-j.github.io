@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Accelerated Forward-Backward Optimization using Deep Learning</title>
+      <link>http://jonasadler.com/publication/accelerated_fb/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0200</pubDate>
+      
+      <guid>http://jonasadler.com/publication/accelerated_fb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deep Bayesian Inversion</title>
       <link>http://jonasadler.com/publication/deep_bayesian/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/deep_bayesian/</guid>
       <description></description>
@@ -24,7 +33,7 @@
     <item>
       <title>Task adapted reconstruction for inverse problems</title>
       <link>http://jonasadler.com/publication/task_adapted_recon/</link>
-      <pubDate>Mon, 27 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/task_adapted_recon/</guid>
       <description></description>
@@ -33,7 +42,7 @@
     <item>
       <title>Deep Learning Framework for Digital Breast Tomosynthesis Reconstruction</title>
       <link>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/deep_learning_digital_breast_tomosynthesis/</guid>
       <description></description>
@@ -42,7 +51,7 @@
     <item>
       <title>Data-driven Nonsmooth Optimization</title>
       <link>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/data_driven_nonsmooth_optimization/</guid>
       <description></description>
@@ -51,7 +60,7 @@
     <item>
       <title>EDS tomographic reconstruction regularized by total nuclear variation joined with HAADF-STEM tomography</title>
       <link>http://jonasadler.com/publication/eds_tomo_recon/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/eds_tomo_recon/</guid>
       <description></description>
@@ -60,7 +69,7 @@
     <item>
       <title>Banach Wasserstein GAN</title>
       <link>http://jonasadler.com/publication/bwgan/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/bwgan/</guid>
       <description></description>
@@ -69,7 +78,7 @@
     <item>
       <title>Learning to solve inverse problems using Wasserstein loss</title>
       <link>http://jonasadler.com/publication/learning_inverse_wasserstein/</link>
-      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/learning_inverse_wasserstein/</guid>
       <description></description>
@@ -78,7 +87,7 @@
     <item>
       <title>Model based learning for accelerated, limited-view 3D photoacoustic tomography</title>
       <link>http://jonasadler.com/publication/model-based-learning-photoacoustic/</link>
-      <pubDate>Thu, 31 Aug 2017 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/model-based-learning-photoacoustic/</guid>
       <description></description>
@@ -87,7 +96,7 @@
     <item>
       <title>Learned Primal-Dual Reconstruction</title>
       <link>http://jonasadler.com/publication/learned-primal-dual/</link>
-      <pubDate>Wed, 05 Jul 2017 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/learned-primal-dual/</guid>
       <description></description>
@@ -96,7 +105,7 @@
     <item>
       <title>GPUMCI: a flexible platform for x-ray imaging on the GPU</title>
       <link>http://jonasadler.com/publication/gpumci/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/gpumci/</guid>
       <description></description>
@@ -105,7 +114,7 @@
     <item>
       <title>Solving ill-posed inverse problems using iterative deep neural networks</title>
       <link>http://jonasadler.com/publication/learning-to-solve/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/learning-to-solve/</guid>
       <description></description>
@@ -114,7 +123,7 @@
     <item>
       <title>A modified fuzzy C means algorithm for shading correction in craniofacial CBCT images</title>
       <link>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/a_modified_fuzzy_c_means/</guid>
       <description></description>
@@ -123,7 +132,7 @@
     <item>
       <title>Spectral CT reconstruction with anti-correlated noise model and joint prior</title>
       <link>http://jonasadler.com/publication/spectral_ct_anticorrelated/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>http://jonasadler.com/publication/spectral_ct_anticorrelated/</guid>
       <description></description>

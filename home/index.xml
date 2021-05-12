@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>http://jonasadler.com/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/hero_carousel/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title></title>
       <link>http://jonasadler.com/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/about/</guid>
       <description>Biography I&amp;rsquo;m a Senior Research Scientist at Google DeepMind in the science team. Before that I was a Research Scientist at Elekta and pursued a PhD in Applied Mathematics under the supervision of Ozan Öktem.
@@ -34,10 +34,11 @@ At DeepMind I work on scientific machine learning, especially focusing on invers
     <item>
       <title>News</title>
       <link>http://jonasadler.com/home/news/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/news/</guid>
-      <description>Nov 2020: We have announced the new version of AlphaFold at CASP14.
+      <description>May 2020: New pre-print out: Accelerated Forward-Backward Optimization using Deep Learning.
+Nov 2020: We have announced the new version of AlphaFold at CASP14.
 Jun 2019: I&amp;rsquo;m joining the Science team at DeepMind.
 Feb 2019: Giving an invited talk at BASP: Deep Posterior Sampling.
 Jan 2019: Organising DLIP and giving a talk on Deep Bayesian Inversion.
@@ -47,7 +48,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Recent Posts</title>
       <link>http://jonasadler.com/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/posts/</guid>
       <description></description>
@@ -56,7 +57,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Selected Publications</title>
       <link>http://jonasadler.com/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/publications_selected/</guid>
       <description></description>
@@ -74,7 +75,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Recent Publications</title>
       <link>http://jonasadler.com/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/publications/</guid>
       <description></description>
@@ -83,7 +84,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Selected Talks</title>
       <link>http://jonasadler.com/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/talks_selected/</guid>
       <description></description>
@@ -92,7 +93,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>http://jonasadler.com/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/talks/</guid>
       <description></description>
@@ -101,7 +102,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Projects</title>
       <link>http://jonasadler.com/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/projects/</guid>
       <description></description>
@@ -110,7 +111,7 @@ Dec 2018: I&amp;rsquo;ll be travelling the US east coast, giving talks at Johns 
     <item>
       <title>Custom Section</title>
       <link>http://jonasadler.com/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
@@ -120,7 +121,7 @@ To remove this section, either delete content/home/teaching.md or edit the front
     <item>
       <title>Open Source</title>
       <link>http://jonasadler.com/home/open_source/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/open_source/</guid>
       <description> ODL Operator Discretization Library (ODL) is a Python library that enables research in inverse problems on realistic or real data.
@@ -131,7 +132,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Tags</title>
       <link>http://jonasadler.com/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/tags/</guid>
       <description></description>
@@ -140,7 +141,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Search</title>
       <link>http://jonasadler.com/home/search/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/search/</guid>
       <description></description>
@@ -149,7 +150,7 @@ Minimal ML implementations Some minimalistic implementations of generative model
     <item>
       <title>Contact</title>
       <link>http://jonasadler.com/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/home/contact/</guid>
       <description></description>

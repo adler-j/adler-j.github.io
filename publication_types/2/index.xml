@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="http://jonasadler.com/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>EDS tomographic reconstruction regularized by total nuclear variation joined with HAADF-STEM tomography</title>
       <link>http://jonasadler.com/publication/eds_tomo_recon/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/eds_tomo_recon/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Model based learning for accelerated, limited-view 3D photoacoustic tomography</title>
       <link>http://jonasadler.com/publication/model-based-learning-photoacoustic/</link>
-      <pubDate>Thu, 31 Aug 2017 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/model-based-learning-photoacoustic/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Learned Primal-Dual Reconstruction</title>
       <link>http://jonasadler.com/publication/learned-primal-dual/</link>
-      <pubDate>Wed, 05 Jul 2017 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/learned-primal-dual/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Solving ill-posed inverse problems using iterative deep neural networks</title>
       <link>http://jonasadler.com/publication/learning-to-solve/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0200</pubDate>
       
       <guid>http://jonasadler.com/publication/learning-to-solve/</guid>
       <description></description>
