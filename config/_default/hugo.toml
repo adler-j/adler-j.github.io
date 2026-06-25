@@ -22,4 +22,4 @@ enableRobotsTXT = true
 
 [services]
   [services.googleAnalytics]
-    ID = ""
+    ID = "G-LLMP768TXV"
