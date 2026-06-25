@@ -8,7 +8,7 @@ authors:
   - "Ritse Mann"
   - "Ioannis Sechopoulos"
   - "Jonas Teuwen"
-summary: "Learned Primal-Dual for DBT"
+summary: "Extending the Learned Primal-Dual algorithm to digital breast tomosynthesis reconstruction."
 math: true
 ---
 

@@ -4,7 +4,7 @@ date: 2017-01-01
 authors:
   - "Mats Persson"
   - "Jonas Adler"
-summary: "Fully3D"
+summary: "Coupling material-selective basis images in spectral CT via an anti-correlated noise model and a joint prior."
 ---
 
 Mats Persson, Jonas Adler  ·  *Fully3D*

@@ -6,7 +6,7 @@ authors:
   - "Willem Jan Palenstijn"
   - "Jonas Adler"
   - "K. Joost Batenburg"
-summary: "Ultramicroscopy"
+summary: "Augmenting EDS tomography with HAADF-STEM through total nuclear variation regularization for accurate 3D nanostructure reconstruction."
 ---
 
 Zhichao  Zhong, Willem Jan Palenstijn, Jonas Adler, K. Joost Batenburg  ·  *Ultramicroscopy*

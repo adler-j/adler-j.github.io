@@ -1,6 +1,6 @@
 ---
-title: "Home"
-description: "Jonas Adler — research scientist at Google DeepMind, working on machine learning for the sciences."
+title: "Jonas Adler"
+description: "Jonas Adler — Principal Research Scientist at Google DeepMind, working on machine learning for the sciences."
 ---
 
 ## Biography

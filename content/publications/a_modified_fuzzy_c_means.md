@@ -4,7 +4,7 @@ date: 2017-01-01
 authors:
   - "Awais Ashfaq"
   - "Jonas Adler"
-summary: "IFMBE Proceedings"
+summary: "A fuzzy C-means approach to shading correction in craniofacial cone-beam CT images."
 math: true
 ---
 
