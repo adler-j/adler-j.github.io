@@ -1,0 +1,19 @@
+locale = "en"
+label = "English"
+weight = 1
+title = "Jonas Adler"
+
+[params]
+  dateFormat = "2 January 2006"
+
+[params.author]
+  name = "Jonas Adler"
+  image = "img/portrait.jpg"
+  headline = "Principal Research Scientist at Google DeepMind"
+  bio = "Scientific machine learning — inverse problems and the intersection of model-driven and data-driven methods."
+  links = [
+    { email = "mailto:contact@jonasadler.com" },
+    { linkedin = "https://www.linkedin.com/in/jonas-adler/" },
+    { "google-scholar" = "https://scholar.google.co.uk/citations?user=196_CDcAAAAJ" },
+    { github = "https://github.com/adler-j" },
+  ]

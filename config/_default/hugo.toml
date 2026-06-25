@@ -1,0 +1,25 @@
+baseURL = "https://jonasadler.com/"
+title = "Jonas Adler"
+defaultContentLanguage = "en"
+enableEmoji = true
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 100
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[module]
+  [[module.imports]]
+    path = "github.com/jpanther/congo/v2"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[services]
+  [services.googleAnalytics]
+    ID = ""
