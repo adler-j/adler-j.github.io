@@ -7,6 +7,8 @@ description: "Jonas Adler — research scientist at Google DeepMind, working on 
 
 I work at the intersection of machine learning and the sciences, contributing to [AlphaFold]({{< ref "/publications/alphafold" >}}) and to Google's [Gemini]({{< ref "/publications/gemini" >}}) models. Before DeepMind I completed a PhD in applied mathematics at KTH, on inverse problems and deep learning, and was a research scientist at Elekta.
 
+The best way to reach me is by email at [contact@jonasadler.com](mailto:contact@jonasadler.com).
+
 ## News
 
 - **Dec 2024:** The work behind [AlphaFold]({{< ref "/publications/alphafold" >}}) was awarded the **2024 Nobel Prize in Chemistry** (to John Jumper and Demis Hassabis). I was part of the AlphaFold team and joined the celebrations in Stockholm.
