@@ -1,11 +1,11 @@
 ---
 title: "Jonas Adler"
-description: "Jonas Adler — Principal Research Scientist at Google DeepMind, working on machine learning for the sciences."
+description: "Jonas Adler — Principal Research Scientist at Google DeepMind, working on frontier AI and machine learning, from Gemini to AlphaFold."
 ---
 
 ## Biography
 
-I work at the intersection of machine learning and the sciences, contributing to [AlphaFold]({{< ref "/publications/alphafold" >}}) and to Google's [Gemini]({{< ref "/publications/gemini" >}}) models. Before DeepMind I completed a PhD in applied mathematics at KTH, on inverse problems and deep learning, and was a research scientist at Elekta.
+I'm a machine learning researcher at Google DeepMind, where I work on frontier AI — contributing to Google's [Gemini]({{< ref "/publications/gemini" >}}) models — as well as machine learning for the sciences, including [AlphaFold]({{< ref "/publications/alphafold" >}}). Before DeepMind I completed a PhD in applied mathematics at KTH, on inverse problems and deep learning, and was a research scientist at Elekta.
 
 The best way to reach me is by email at [contact@jonasadler.com](mailto:contact@jonasadler.com).
 
